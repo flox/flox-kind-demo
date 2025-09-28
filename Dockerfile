@@ -12,4 +12,4 @@ RUN curl -Lo /tmp/flox.x86_64-linux.deb https://flox.dev/downloads/debian-archiv
 	&& dpkg -i /tmp/flox.x86_64-linux.deb \
 	&& rm /tmp/flox.x86_64-linux.deb
 
-RUN flox activate -r devusb/containerd-shim-flox-installer --trust
+RUN flox activate -r flox-public/containerd-shim-flox-installer --trust
