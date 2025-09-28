@@ -14,35 +14,39 @@ env:
   # Defaults to ghcr.io/<owner>/<repo>
   IMAGE_BASE: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}
   BUILDAH_FORMAT: docker  # broad runtime compatibility
+  FLOX_DISABLE_METRICS: "true"
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-22.04"
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Podman
-        run: |
-          sudo apt update
-          sudo apt -y install podman
+      - name: "Install Flox"
+        uses: "flox/install-flox-action@main"
 
       - name: Build image
-        run: |
+        uses: "flox/activate-action@main"
+        with:
           # temp local tag; we'll retag as :latest only on push events
-          podman build -t "${IMAGE_BASE}:ci-build" .
+          command: |
+            buildah bud -t "${IMAGE_BASE}:ci-build" .
 
       - name: Log in to GHCR
         if: ${{ github.event_name == 'push' }}
+        uses: "flox/activate-action@main"
         env:
           CR_PAT: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "${CR_PAT}" | podman login ghcr.io -u ${{ github.actor }} --password-stdin
+        with:
+          command: |
+            sh -c 'echo "${CR_PAT}" | buildah login ghcr.io -u ${{ github.actor }} --password-stdin'
 
       - name: Tag & push :latest (main only)
         if: ${{ github.event_name == 'push' }}
-        run: |
-          podman tag "${IMAGE_BASE}:ci-build" "${IMAGE_BASE}:latest"
-          podman push "${IMAGE_BASE}:latest"
+        uses: "flox/activate-action@main"
+        with:
+          command: |
+            sh -c 'buildah tag "${IMAGE_BASE}:ci-build" "${IMAGE_BASE}:latest" && buildah push "${IMAGE_BASE}:latest"'
 
