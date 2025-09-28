@@ -3,6 +3,9 @@
   "manifest": {
     "version": 1,
     "install": {
+      "buildah": {
+        "pkg-path": "buildah"
+      },
       "gh": {
         "pkg-path": "gh"
       },
@@ -36,6 +39,130 @@
     "options": {}
   },
   "packages": [
+    {
+      "attr_path": "buildah",
+      "broken": false,
+      "derivation": "/nix/store/vm2ph8mnkfmgy6zmkclg16k91gaix66f-buildah-wrapper-1.41.4.drv",
+      "description": "Tool which facilitates building OCI images",
+      "install_id": "buildah",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "buildah-wrapper-1.41.4",
+      "pname": "buildah",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:00:42.276865Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.41.4",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "man": "/nix/store/929x1mddbfhzvlqk2pfi02djl8criqdd-buildah-wrapper-1.41.4-man",
+        "out": "/nix/store/q8kvh69vp9vh15dq6i7ldr098ifldlsy-buildah-wrapper-1.41.4"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "buildah",
+      "broken": false,
+      "derivation": "/nix/store/wfhcxwp2xxj3yx16s8ljqrhrdzwsi28d-buildah-wrapper-1.41.4.drv",
+      "description": "Tool which facilitates building OCI images",
+      "install_id": "buildah",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "buildah-wrapper-1.41.4",
+      "pname": "buildah",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:29:40.163832Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.41.4",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "man": "/nix/store/ljw2wqjr1s9qcva5d7n53vq5lncy6dig-buildah-wrapper-1.41.4-man",
+        "out": "/nix/store/wz12p5d331xlbdzikj6f32mhf0vhpagr-buildah-wrapper-1.41.4"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "buildah",
+      "broken": false,
+      "derivation": "/nix/store/gmhrnkv492ph17fl39nd9p021jcsyxzq-buildah-wrapper-1.41.4.drv",
+      "description": "Tool which facilitates building OCI images",
+      "install_id": "buildah",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "buildah-wrapper-1.41.4",
+      "pname": "buildah",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:56:35.671977Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.41.4",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "man": "/nix/store/r1z92fps7jx4r3y2hbk77wrby3i0ihdq-buildah-wrapper-1.41.4-man",
+        "out": "/nix/store/46rx9fbiavdy49c3a68fwlcqklnx9xfq-buildah-wrapper-1.41.4"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "buildah",
+      "broken": false,
+      "derivation": "/nix/store/qfjga777x7wmsz6gwsr7aqq1xwwg3ggy-buildah-wrapper-1.41.4.drv",
+      "description": "Tool which facilitates building OCI images",
+      "install_id": "buildah",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "buildah-wrapper-1.41.4",
+      "pname": "buildah",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T03:26:56.254712Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.41.4",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "man": "/nix/store/k5fp1q35gi3rvlrvlv9wgwbr76yhnrc9-buildah-wrapper-1.41.4-man",
+        "out": "/nix/store/sgvf2j4lxww9d385rplzv0y5hrvjdc52-buildah-wrapper-1.41.4"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
     {
       "attr_path": "gh",
       "broken": false,
