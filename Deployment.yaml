@@ -4,8 +4,13 @@ metadata:
   name: flox-containerd-demo
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: flox-containerd-demo
   template:
     metadata:
+      labels:
+        app: flox-containerd-demo
       annotations:
         flox.dev/environment: "limeytexan/echoip"
     spec:

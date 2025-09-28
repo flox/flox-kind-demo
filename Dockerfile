@@ -1,4 +1,4 @@
-FROM kindest/node:v1.33.4
+FROM kindest/node:v1.34.0
 
 ENV FLOX_DISABLE_METRICS=true
 ARG SHELL=/bin/bash

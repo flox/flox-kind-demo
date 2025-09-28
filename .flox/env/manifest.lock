@@ -3,6 +3,13 @@
   "manifest": {
     "version": 1,
     "install": {
+      "iptables": {
+        "pkg-path": "iptables",
+        "systems": [
+          "aarch64-linux",
+          "x86_64-linux"
+        ]
+      },
       "k9s": {
         "pkg-path": "k9s"
       },
@@ -14,11 +21,84 @@
       },
       "kubectx": {
         "pkg-path": "kubectx"
+      },
+      "podman": {
+        "pkg-path": "podman",
+        "systems": [
+          "aarch64-linux",
+          "x86_64-linux"
+        ]
       }
     },
     "options": {}
   },
   "packages": [
+    {
+      "attr_path": "iptables",
+      "broken": false,
+      "derivation": "/nix/store/3yv4p5wg1sf1wbbdp3snbxj2ijvqhchn-iptables-1.8.11.drv",
+      "description": "Program to configure the Linux IP packet filtering ruleset",
+      "install_id": "iptables",
+      "license": "GPL-2.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "iptables-1.8.11",
+      "pname": "iptables",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:30:00.395480Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.8.11",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/ylpzm3wn8xrwsy68g2k6h4lrnf0sr4f2-iptables-1.8.11-dev",
+        "lib": "/nix/store/l45gfkcfyx3p529d8cp5zfs3wq5dn4dx-iptables-1.8.11-lib",
+        "man": "/nix/store/4r298zzfywwilb6gaap9iqp4qspl8ma2-iptables-1.8.11-man",
+        "out": "/nix/store/rj478f7yn1y0hp0ibw1k9hjwgx4izdps-iptables-1.8.11"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "iptables",
+      "broken": false,
+      "derivation": "/nix/store/9qnjgd5vx73f8ibl1fpjhzvkyfawrwfj-iptables-1.8.11.drv",
+      "description": "Program to configure the Linux IP packet filtering ruleset",
+      "install_id": "iptables",
+      "license": "GPL-2.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "iptables-1.8.11",
+      "pname": "iptables",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T03:27:17.424498Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.8.11",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/mapxv0sc6d58rlsjf6yr15c5abjfirhy-iptables-1.8.11-dev",
+        "lib": "/nix/store/hnzd7yy52arxllp9ilsxjankih7kf37j-iptables-1.8.11-lib",
+        "man": "/nix/store/miaryccwkfzm8jlbax7bsl98shjgxd1k-iptables-1.8.11-man",
+        "out": "/nix/store/0aiv0yaim1gbwxscvmngwzn0311h2z06-iptables-1.8.11"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
     {
       "attr_path": "k9s",
       "broken": false,
@@ -26,13 +106,13 @@
       "description": "Kubernetes CLI To Manage Your Clusters In Style",
       "install_id": "k9s",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "k9s-0.50.9",
       "pname": "k9s",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T02:59:00.110626Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:00:57.937627Z",
       "stabilities": [
         "unstable"
       ],
@@ -55,13 +135,13 @@
       "description": "Kubernetes CLI To Manage Your Clusters In Style",
       "install_id": "k9s",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "k9s-0.50.9",
       "pname": "k9s",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T03:28:08.625014Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:30:01.047480Z",
       "stabilities": [
         "unstable"
       ],
@@ -84,13 +164,13 @@
       "description": "Kubernetes CLI To Manage Your Clusters In Style",
       "install_id": "k9s",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "k9s-0.50.9",
       "pname": "k9s",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T03:55:43.420981Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:56:50.915712Z",
       "stabilities": [
         "unstable"
       ],
@@ -113,13 +193,13 @@
       "description": "Kubernetes CLI To Manage Your Clusters In Style",
       "install_id": "k9s",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "k9s-0.50.9",
       "pname": "k9s",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T04:26:59.956125Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T03:27:18.069364Z",
       "stabilities": [
         "unstable"
       ],
@@ -142,13 +222,13 @@
       "description": "Kubernetes IN Docker - local clusters for testing Kubernetes",
       "install_id": "kind",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kind-0.30.0",
       "pname": "kind",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T02:59:00.399270Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:00:58.261856Z",
       "stabilities": [
         "unstable"
       ],
@@ -171,13 +251,13 @@
       "description": "Kubernetes IN Docker - local clusters for testing Kubernetes",
       "install_id": "kind",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kind-0.30.0",
       "pname": "kind",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T03:28:09.690910Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:30:02.098729Z",
       "stabilities": [
         "unstable"
       ],
@@ -200,13 +280,13 @@
       "description": "Kubernetes IN Docker - local clusters for testing Kubernetes",
       "install_id": "kind",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kind-0.30.0",
       "pname": "kind",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T03:55:43.727057Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:56:51.225910Z",
       "stabilities": [
         "unstable"
       ],
@@ -229,13 +309,13 @@
       "description": "Kubernetes IN Docker - local clusters for testing Kubernetes",
       "install_id": "kind",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kind-0.30.0",
       "pname": "kind",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T04:27:01.130017Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T03:27:19.154334Z",
       "stabilities": [
         "unstable"
       ],
@@ -258,13 +338,13 @@
       "description": "Kubernetes CLI",
       "install_id": "kubectl",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kubectl-1.33.4",
       "pname": "kubectl",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T02:59:00.617519Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:00:58.476312Z",
       "stabilities": [
         "unstable"
       ],
@@ -290,13 +370,13 @@
       "description": "Kubernetes CLI",
       "install_id": "kubectl",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kubectl-1.33.4",
       "pname": "kubectl",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T03:28:10.107720Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:30:02.522718Z",
       "stabilities": [
         "unstable"
       ],
@@ -322,13 +402,13 @@
       "description": "Kubernetes CLI",
       "install_id": "kubectl",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kubectl-1.33.4",
       "pname": "kubectl",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T03:55:43.950392Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:56:51.444847Z",
       "stabilities": [
         "unstable"
       ],
@@ -354,13 +434,13 @@
       "description": "Kubernetes CLI",
       "install_id": "kubectl",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kubectl-1.33.4",
       "pname": "kubectl",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T04:27:01.611830Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T03:27:19.584965Z",
       "stabilities": [
         "unstable"
       ],
@@ -386,13 +466,13 @@
       "description": "Fast way to switch between clusters and namespaces in kubectl",
       "install_id": "kubectx",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kubectx-0.9.5",
       "pname": "kubectx",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T02:59:00.642785Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:00:58.502752Z",
       "stabilities": [
         "unstable"
       ],
@@ -415,13 +495,13 @@
       "description": "Fast way to switch between clusters and namespaces in kubectl",
       "install_id": "kubectx",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kubectx-0.9.5",
       "pname": "kubectx",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T03:28:10.139026Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:30:02.553899Z",
       "stabilities": [
         "unstable"
       ],
@@ -444,13 +524,13 @@
       "description": "Fast way to switch between clusters and namespaces in kubectl",
       "install_id": "kubectx",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kubectx-0.9.5",
       "pname": "kubectx",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T03:55:43.979939Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:56:51.472581Z",
       "stabilities": [
         "unstable"
       ],
@@ -473,13 +553,13 @@
       "description": "Fast way to switch between clusters and namespaces in kubectl",
       "install_id": "kubectx",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=554be6495561ff07b6c724047bdd7e0716aa7b46",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
       "name": "kubectx-0.9.5",
       "pname": "kubectx",
-      "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
-      "rev_count": 864611,
-      "rev_date": "2025-09-21T03:59:47Z",
-      "scrape_date": "2025-09-24T04:27:01.647148Z",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T03:27:19.616247Z",
       "stabilities": [
         "unstable"
       ],
@@ -490,6 +570,68 @@
       ],
       "outputs": {
         "out": "/nix/store/liiq6r71mhpg6d3rs25mb2h7xacq2aj2-kubectx-0.9.5"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "podman",
+      "broken": false,
+      "derivation": "/nix/store/y0hrvizdn95dn3m1hf2bdxnqlw9mf717-podman-5.6.0.drv",
+      "description": "Program for managing pods, containers and container images",
+      "install_id": "podman",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "podman-5.6.0",
+      "pname": "podman",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:30:37.936071Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "5.6.0",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "man": "/nix/store/84pirav7gx66xsijs8zbnrq9mjs1h9fl-podman-5.6.0-man",
+        "out": "/nix/store/6mjhghvvaqfh1y2bnk2ga0lc1q1xcb67-podman-5.6.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "podman",
+      "broken": false,
+      "derivation": "/nix/store/qpk2v4na1siwy3phhs4a6ya0awd2bpgv-podman-5.6.0.drv",
+      "description": "Program for managing pods, containers and container images",
+      "install_id": "podman",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "podman-5.6.0",
+      "pname": "podman",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T03:27:57.669225Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "5.6.0",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "man": "/nix/store/y1qqllwsh920r8ysgvx0jlx9gppbg0kf-podman-5.6.0-man",
+        "out": "/nix/store/yd4qvk84fx5as8n256n8yzqgkrgzl660-podman-5.6.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
