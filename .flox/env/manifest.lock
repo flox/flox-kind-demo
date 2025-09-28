@@ -3,6 +3,9 @@
   "manifest": {
     "version": 1,
     "install": {
+      "gh": {
+        "pkg-path": "gh"
+      },
       "iptables": {
         "pkg-path": "iptables",
         "systems": [
@@ -33,6 +36,122 @@
     "options": {}
   },
   "packages": [
+    {
+      "attr_path": "gh",
+      "broken": false,
+      "derivation": "/nix/store/68ingvq9b5h1yzrpi67m1na995m35g79-gh-2.79.0.drv",
+      "description": "GitHub CLI tool",
+      "install_id": "gh",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "gh-2.79.0",
+      "pname": "gh",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:00:43.221017Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.79.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/ky5yynv151w1v0h2xby8knzy23b9csbb-gh-2.79.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gh",
+      "broken": false,
+      "derivation": "/nix/store/lp3w745x7x7qynfjaz8va8d0cw5i6mm8-gh-2.79.0.drv",
+      "description": "GitHub CLI tool",
+      "install_id": "gh",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "gh-2.79.0",
+      "pname": "gh",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:29:41.535325Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.79.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/zvljqh8dxlp71r4gzc3js3s35fa2l3zb-gh-2.79.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gh",
+      "broken": false,
+      "derivation": "/nix/store/690585ipgvj8755fk29mxniw2vd4ja13-gh-2.79.0.drv",
+      "description": "GitHub CLI tool",
+      "install_id": "gh",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "gh-2.79.0",
+      "pname": "gh",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T02:56:36.611106Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.79.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/ikvh3fzss3p70y6izxcppankis418rlz-gh-2.79.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gh",
+      "broken": false,
+      "derivation": "/nix/store/6s3sds15db854kv81jghxhrvx5ic4rd8-gh-2.79.0.drv",
+      "description": "GitHub CLI tool",
+      "install_id": "gh",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "name": "gh-2.79.0",
+      "pname": "gh",
+      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+      "rev_count": 861038,
+      "rev_date": "2025-09-13T06:43:22Z",
+      "scrape_date": "2025-09-15T03:26:57.738999Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.79.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/hx0j1gvffm0m3gx5m50gjjggkwba0zxc-gh-2.79.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
     {
       "attr_path": "iptables",
       "broken": false,
