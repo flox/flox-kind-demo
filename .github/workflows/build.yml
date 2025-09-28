@@ -1,0 +1,48 @@
+name: Build and Push
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  # Defaults to ghcr.io/<owner>/<repo>
+  IMAGE_BASE: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}
+  BUILDAH_FORMAT: docker  # broad runtime compatibility
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Podman
+        run: |
+          sudo apt update
+          sudo apt -y install podman
+
+      - name: Build image
+        run: |
+          # temp local tag; we'll retag as :latest only on push events
+          podman build -t "${IMAGE_BASE}:ci-build" .
+
+      - name: Log in to GHCR
+        if: ${{ github.event_name == 'push' }}
+        env:
+          CR_PAT: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "${CR_PAT}" | podman login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Tag & push :latest (main only)
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          podman tag "${IMAGE_BASE}:ci-build" "${IMAGE_BASE}:latest"
+          podman push "${IMAGE_BASE}:latest"
+

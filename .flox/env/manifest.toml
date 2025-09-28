@@ -1,0 +1,7 @@
+version = 1
+
+[install]
+kind.pkg-path = "kind"
+k9s.pkg-path = "k9s"
+kubectl.pkg-path = "kubectl"
+kubectx.pkg-path = "kubectx"

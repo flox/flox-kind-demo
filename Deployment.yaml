@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flox-containerd-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        flox.dev/environment: "limeytexan/echoip"
+    spec:
+      runtimeClassName: flox
+      # hostNetwork: true   # join the node's network namespace
+      dnsPolicy: Default    # inherit the node's /etc/resolv.conf
+      containers:
+        # The following container is not used but is required by the
+        # Kubernetes pod specification. Any valid values can be used here.
+        - name: empty
+          image: flox/empty:1.0.0
+          # The following command is the command that is invoked by `flox activate`
+          # to keep the environment alive. It can be used to perform supplementary
+          # actions at startup, and when this command exits the pod is torn down.
+          command: ["echoip"]
+          volumeMounts:
+            - name: cache-volume
+              mountPath: /cache
+      volumes:
+        - name: cache-volume
+          emptyDir: {}
+
