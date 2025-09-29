@@ -1,6 +1,6 @@
 # Flox containerd Shim Demo Environment w/ Kind
 
-This repository contains the configuration files needed to create a (Kind)[https://kind.sigs.k8s.io/] (Kubernetes in Docker) cluster with Flox runtime support. This cluster can be used to quickly try out the shim locally.
+This repository contains the configuration files needed to create a [Kind](https://kind.sigs.k8s.io/) (Kubernetes in Docker) cluster with Flox runtime support. This cluster can be used to quickly try out the shim locally.
 
 ## Prerequisites
 
