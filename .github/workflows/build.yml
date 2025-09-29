@@ -3,8 +3,10 @@ name: Build and Push
 on:
   push:
     branches: ["main"]
+    paths: ["Dockerfile"]
   pull_request:
     branches: ["main"]
+    paths: ["Dockerfile"]
 
 permissions:
   contents: read
