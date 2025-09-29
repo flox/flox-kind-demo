@@ -1,12 +1,12 @@
-# Flox Kind Environment Setup
+# Flox containerd Shim Demo Environment w/ Kind
 
-This repository contains the configuration files needed to create a Kind (Kubernetes in Docker) cluster with Flox runtime support.
+This repository contains the configuration files needed to create a (Kind)[https://kind.sigs.k8s.io/] (Kubernetes in Docker) cluster with Flox runtime support. This cluster can be used to quickly try out the shim locally.
 
 ## Prerequisites
 
 ### Requirements
 
-Ensure you have either Podman or Docker installed on your system
+Ensure you have either Podman or Docker installed on your system.
 
 Before creating the Kind cluster, you need to authenticate with GitHub Container Registry (GHCR) to pull the node image.
 
