@@ -10,51 +10,34 @@ Ensure you have either Podman or Docker installed on your system.
 
 Before creating the Kind cluster, you need to authenticate with GitHub Container Registry (GHCR) to pull the node image.
 
-1. **Login to GitHub CLI with required scopes**:
-   ```bash
-   gh auth login --scopes "gist read:org repo read:packages write:packages"
-   ```
+**Authenticate with GitHub and Docker/Podman**:
+```bash
+just auth <USERNAME>
+```
 
-2. **Login to Docker/Podman with GHCR**:
-   ```bash
-   gh auth token | docker login ghcr.io -u <USERNAME> --password-stdin
-   ```
-
-   Replace `<USERNAME>` with your GitHub username.
+Replace `<USERNAME>` with your GitHub username. This will handle both GitHub CLI authentication and Docker/Podman login to GHCR.
 
 ## Setup Instructions
 
-### 1. Create Kind Cluster
+### Start the Demo Environment
 
-Create the Kind cluster using the provided cluster configuration:
+Create the complete demo environment with a single command:
 
 ```bash
-kind create cluster --config=Cluster.yaml
+just up
 ```
 
-This will create a cluster with:
+This will:
+- Create a Kind cluster named `flox-shim` with the provided configuration
+- Apply the Flox RuntimeClass configuration
+- Deploy the sample application
+- Display helpful next steps
+
+The cluster will have:
 - 1 control-plane node using `ghcr.io/flox/flox-kind:latest`
 - 1 worker node using `ghcr.io/flox/flox-kind:latest`
 
-### 2. Apply RuntimeClass
-
-Apply the Flox runtime class configuration:
-
-```bash
-kubectl apply -f RuntimeClass.yaml
-```
-
-This creates a RuntimeClass named `flox` that enables creating pods that use the Flox shim.
-
-### 3. Deploy Application
-
-Apply the sample deployment:
-
-```bash
-kubectl apply -f Deployment.yaml
-```
-
-This creates a deployment called `flox-containerd-demo` that:
+The deployment creates a pod called `flox-containerd-demo` that:
 - Uses the `flox` runtime class
 - Runs the `limeytexan/echoip` Flox environment
 - Executes the `echoip` command
@@ -89,5 +72,5 @@ With k9s you can:
 To remove the Kind cluster:
 
 ```bash
-kind delete cluster
+just down
 ```
