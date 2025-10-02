@@ -14,7 +14,7 @@ docker-login username:
 
 # Stand up the complete demo environment
 up:
-    kind create cluster --config=Cluster.yaml
+    kind create cluster --config=Cluster.yaml --name flox-shim
     kubectl apply -f RuntimeClass.yaml
     kubectl apply -f Deployment.yaml
     @echo ""
@@ -25,7 +25,7 @@ up:
 
 # Shut down and clean up everything
 down:
-    kind delete cluster
+    kind delete cluster --name flox-shim
 
 # Full authentication setup (requires GitHub username argument)
 auth username: gh-login (docker-login username)
