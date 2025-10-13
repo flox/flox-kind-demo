@@ -11,3 +11,4 @@ podman.pkg-path = "podman"
 podman.systems = ["aarch64-linux", "x86_64-linux"]
 gh.pkg-path = "gh"
 just.pkg-path = "just"
+colima.pkg-path = "colima"

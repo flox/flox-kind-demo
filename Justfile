@@ -14,6 +14,7 @@ docker-login username:
 
 # Stand up the complete demo environment
 up:
+    colima start -a x86_64 --vz-rosetta
     kind create cluster --config=Cluster.yaml --name flox-shim
     kubectl apply -f RuntimeClass.yaml
     kubectl apply -f Deployment.yaml
@@ -26,6 +27,7 @@ up:
 # Shut down and clean up everything
 down:
     kind delete cluster --name flox-shim
+    colima stop
 
 # Full authentication setup (requires GitHub username argument)
 auth username: gh-login (docker-login username)
