@@ -12,7 +12,7 @@ spec:
       labels:
         app: flox-containerd-demo
       annotations:
-        flox.dev/environment: "limeytexan/echoip"
+        flox.dev/environment: "djsauble/simple-http-server"
     spec:
       runtimeClassName: flox
       # hostNetwork: true   # join the node's network namespace
@@ -25,11 +25,23 @@ spec:
           # The following command is the command that is invoked by `flox activate`
           # to keep the environment alive. It can be used to perform supplementary
           # actions at startup, and when this command exits the pod is torn down.
-          command: ["echoip"]
+          command: ["simple-http-server"]
           volumeMounts:
             - name: cache-volume
               mountPath: /cache
       volumes:
         - name: cache-volume
           emptyDir: {}
-
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flox-containerd-demo
+spec:
+  type: NodePort
+  selector:
+    app: flox-containerd-demo
+  ports:
+    - port: 8000
+      targetPort: 8000
+      nodePort: 30000
