@@ -10,11 +10,15 @@ gh-login:
 
 # Login to Docker/Podman with GHCR (requires GitHub username argument)
 docker-login username:
-    gh auth token | docker login ghcr.io -u {{username}} --password-stdin
+    gh auth token | docker login ghcr.io -u {{ username }} --password-stdin
 
 # Stand up the complete demo environment
 up:
-    colima start -a x86_64 --vz-rosetta
+    @if command -v podman &> /dev/null; then \
+        echo "Podman detected, not using Colima"; \
+    else \
+        colima start -a x86_64; \
+    fi
     kind create cluster --config=Cluster.yaml --name flox-shim
     kubectl apply -f RuntimeClass.yaml
     kubectl apply -f Deployment.yaml
@@ -27,7 +31,11 @@ up:
 # Shut down and clean up everything
 down:
     kind delete cluster --name flox-shim
-    colima stop
+    @if command -v podman &> /dev/null; then \
+        echo "Podman detected, not using Colima"; \
+    else \
+        colima stop; \
+    fi
 
 # Full authentication setup (requires GitHub username argument)
 auth username: gh-login (docker-login username)

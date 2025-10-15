@@ -30,13 +30,6 @@
       },
       "kubectx": {
         "pkg-path": "kubectx"
-      },
-      "podman": {
-        "pkg-path": "podman",
-        "systems": [
-          "aarch64-linux",
-          "x86_64-linux"
-        ]
       }
     },
     "options": {}
@@ -939,68 +932,6 @@
       ],
       "outputs": {
         "out": "/nix/store/liiq6r71mhpg6d3rs25mb2h7xacq2aj2-kubectx-0.9.5"
-      },
-      "system": "x86_64-linux",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "podman",
-      "broken": false,
-      "derivation": "/nix/store/y0hrvizdn95dn3m1hf2bdxnqlw9mf717-podman-5.6.0.drv",
-      "description": "Program for managing pods, containers and container images",
-      "install_id": "podman",
-      "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
-      "name": "podman-5.6.0",
-      "pname": "podman",
-      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
-      "rev_count": 861038,
-      "rev_date": "2025-09-13T06:43:22Z",
-      "scrape_date": "2025-09-15T02:30:37.936071Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "5.6.0",
-      "outputs_to_install": [
-        "man",
-        "out"
-      ],
-      "outputs": {
-        "man": "/nix/store/84pirav7gx66xsijs8zbnrq9mjs1h9fl-podman-5.6.0-man",
-        "out": "/nix/store/6mjhghvvaqfh1y2bnk2ga0lc1q1xcb67-podman-5.6.0"
-      },
-      "system": "aarch64-linux",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "podman",
-      "broken": false,
-      "derivation": "/nix/store/qpk2v4na1siwy3phhs4a6ya0awd2bpgv-podman-5.6.0.drv",
-      "description": "Program for managing pods, containers and container images",
-      "install_id": "podman",
-      "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=c23193b943c6c689d70ee98ce3128239ed9e32d1",
-      "name": "podman-5.6.0",
-      "pname": "podman",
-      "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
-      "rev_count": 861038,
-      "rev_date": "2025-09-13T06:43:22Z",
-      "scrape_date": "2025-09-15T03:27:57.669225Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "5.6.0",
-      "outputs_to_install": [
-        "man",
-        "out"
-      ],
-      "outputs": {
-        "man": "/nix/store/y1qqllwsh920r8ysgvx0jlx9gppbg0kf-podman-5.6.0-man",
-        "out": "/nix/store/yd4qvk84fx5as8n256n8yzqgkrgzl660-podman-5.6.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
