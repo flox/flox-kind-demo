@@ -6,8 +6,6 @@ This repository contains the configuration files needed to create a [Kind](https
 
 ### Requirements
 
-Ensure you have either Podman or Docker installed on your system.
-
 Before creating the Kind cluster, you need to authenticate with GitHub Container Registry (GHCR) to pull the node image.
 
 **Authenticate with GitHub and Docker/Podman**:
