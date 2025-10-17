@@ -1,22 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flox-containerd-demo
+  name: redis
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flox-containerd-demo
+      app: redis
   template:
     metadata:
       labels:
-        app: flox-containerd-demo
+        app: redis
       annotations:
-        flox.dev/environment: "limeytexan/echoip"
+        flox.dev/environment: "flox/redis"
     spec:
       runtimeClassName: flox
-      # hostNetwork: true   # join the node's network namespace
-      dnsPolicy: Default    # inherit the node's /etc/resolv.conf
       containers:
         # The following container is not used but is required by the
         # Kubernetes pod specification. Any valid values can be used here.
@@ -25,11 +23,11 @@ spec:
           # The following command is the command that is invoked by `flox activate`
           # to keep the environment alive. It can be used to perform supplementary
           # actions at startup, and when this command exits the pod is torn down.
-          command: ["echoip"]
+          command: ["redis-server", "$REDISCONFIG", "--daemonize", "no", "--dir", "/data" ]
           volumeMounts:
-            - name: cache-volume
-              mountPath: /cache
+            - name: redis-data
+              mountPath: /data
       volumes:
-        - name: cache-volume
+        - name: redis-data
           emptyDir: {}
 
