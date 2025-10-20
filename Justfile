@@ -27,7 +27,6 @@ up:
     @echo ""
     @echo "Demo environment is ready!"
     @echo "Try: kubectl get pods"
-    @echo "Or:  kubectl logs deployment/flox-containerd-demo"
     @echo "Or:  k9s"
 
 # Shut down and clean up everything
