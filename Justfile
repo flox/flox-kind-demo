@@ -20,8 +20,10 @@ up:
         colima start -a x86_64; \
     fi
     kind create cluster --config=Cluster.yaml --name flox-shim
+    kubectl create ns flox
     kubectl apply -f RuntimeClass.yaml
-    kubectl apply -f Deployment.yaml
+    kubectl apply -f redis.yaml
+    kubectl apply -f quotes.yaml
     @echo ""
     @echo "Demo environment is ready!"
     @echo "Try: kubectl get pods"
