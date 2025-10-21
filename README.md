@@ -35,10 +35,9 @@ The cluster will have:
 - 1 control-plane node using `ghcr.io/flox/flox-kind:latest`
 - 1 worker node using `ghcr.io/flox/flox-kind:latest`
 
-The deployment creates a pod called `flox-containerd-demo` that:
-- Uses the `flox` runtime class
-- Runs the `limeytexan/echoip` Flox environment
-- Executes the `echoip` command
+The deployment creates:
+- A `redis` pod running from `flox/redis` with a corresponding `Service`
+- A pod running `quotes-app` that writes some initial quotes to the `redis` at startup, then uses it to serve quotes
 
 ## Cluster Management
 
