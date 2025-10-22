@@ -14,11 +14,7 @@ docker-login username:
 
 # Stand up the complete demo environment
 up:
-    @if command -v podman &> /dev/null; then \
-        echo "Podman detected, not using Colima"; \
-    else \
-        colima start -a x86_64; \
-    fi
+    colima start -a x86_64
     kind create cluster --config=Cluster.yaml --name flox-shim
     kubectl create ns flox
     kubectl apply -f RuntimeClass.yaml
@@ -32,11 +28,7 @@ up:
 # Shut down and clean up everything
 down:
     kind delete cluster --name flox-shim
-    @if command -v podman &> /dev/null; then \
-        echo "Podman detected, not using Colima"; \
-    else \
-        colima stop; \
-    fi
+    colima stop
 
 # Full authentication setup (requires GitHub username argument)
 auth username: gh-login (docker-login username)
