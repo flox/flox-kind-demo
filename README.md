@@ -20,6 +20,7 @@ This will:
 - Create a Kind cluster named `flox-shim` with the provided configuration
 - Apply the Flox RuntimeClass configuration
 - Deploy the sample application
+- Forward port 3000 to the deployed application
 - Display helpful next steps
 
 The cluster will have:
@@ -29,6 +30,12 @@ The cluster will have:
 The deployment creates:
 - A `redis` pod running from `flox/redis` with a corresponding `Service`
 - A pod running `quotes-app` that writes some initial quotes to the `redis` at startup, then uses it to serve quotes
+
+Once `just up` completes, fetch something from the running application by
+running:
+```bash
+curl localhost:3000/quotes/0
+```
 
 ## Cluster Management
 
