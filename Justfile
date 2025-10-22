@@ -4,14 +4,6 @@
 __default:
     @just --list
 
-# Login to GitHub CLI with required scopes
-gh-login:
-    gh auth login --scopes "gist read:org repo read:packages write:packages"
-
-# Login to Docker/Podman with GHCR (requires GitHub username argument)
-docker-login username:
-    gh auth token | docker login ghcr.io -u {{ username }} --password-stdin
-
 # Stand up the complete demo environment
 up:
     colima start -a x86_64
@@ -29,6 +21,3 @@ up:
 down:
     kind delete cluster --name flox-shim
     colima stop
-
-# Full authentication setup (requires GitHub username argument)
-auth username: gh-login (docker-login username)

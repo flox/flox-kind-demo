@@ -1,19 +1,6 @@
 # Flox containerd Shim Demo Environment w/ Kind
 
-This repository contains the configuration files needed to create a [Kind](https://kind.sigs.k8s.io/) (Kubernetes in Docker) cluster with Flox runtime support. This cluster can be used to quickly try out the shim locally.
-
-## Prerequisites
-
-### Requirements
-
-Before creating the Kind cluster, you need to authenticate with GitHub Container Registry (GHCR) to pull the node image.
-
-**Authenticate with GitHub and Docker/Podman**:
-```bash
-just auth <USERNAME>
-```
-
-Replace `<USERNAME>` with your GitHub username. This will handle both GitHub CLI authentication and Docker/Podman login to GHCR.
+This repository contains the configuration files needed to create a [Kind](https://kind.sigs.k8s.io/) (Kubernetes in Docker) cluster with Flox runtime support. This cluster can be used to quickly try out the Flox shim locally.
 
 ## Setup Instructions
 
