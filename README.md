@@ -1,31 +1,22 @@
 # Flox containerd Shim Demo Environment w/ Kind
 
-This repository contains the configuration files needed to create a [Kind](https://kind.sigs.k8s.io/) (Kubernetes in Docker) cluster with Flox runtime support. This cluster can be used to quickly try out the shim locally.
-
-## Prerequisites
-
-### Requirements
-
-Before creating the Kind cluster, you need to authenticate with GitHub Container Registry (GHCR) to pull the node image.
-
-**Authenticate with GitHub and Docker/Podman**:
-```bash
-just auth <USERNAME>
-```
-
-Replace `<USERNAME>` with your GitHub username. This will handle both GitHub CLI authentication and Docker/Podman login to GHCR.
+This repository contains the configuration files needed to create a [Kind](https://kind.sigs.k8s.io/) (Kubernetes in Docker) cluster with Flox runtime support. This cluster can be used to quickly try out the Flox shim locally.
 
 ## Setup Instructions
 
 ### Start the Demo Environment
 
-Create the complete demo environment with a single command:
+The provided Flox environment provides all the tools needed for the demo
+(colima, kind, just, k9s, kubectl).
+To start the demo environment, run:
 
 ```bash
+flox activate
 just up
 ```
 
 This will:
+- Start a Colima VM
 - Create a Kind cluster named `flox-shim` with the provided configuration
 - Apply the Flox RuntimeClass configuration
 - Deploy the sample application
@@ -41,15 +32,6 @@ The deployment creates:
 
 ## Cluster Management
 
-### Using kubectl
-
-Check that your deployment is running:
-
-```bash
-kubectl get pods
-kubectl logs deployment/flox-containerd-demo
-```
-
 ### Using k9s (Recommended)
 
 Launch k9s for an interactive cluster dashboard:
@@ -63,6 +45,16 @@ With k9s you can:
 - View logs by pressing `l` on a selected pod
 - Describe resources by pressing `d`
 - Delete resources by pressing `ctrl+d`
+
+### Using kubectl
+
+Check that your deployment is running:
+
+```bash
+kubectl get pods
+kubectl logs deployment/flox-containerd-demo
+```
+
 
 ## Cleanup
 

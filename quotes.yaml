@@ -13,7 +13,7 @@ spec:
       labels:
         app: quotes
       annotations:
-        flox.dev/environment: "devusb/quotes-app"
+        flox.dev/environment: "flox/quotes-app"
     spec:
       runtimeClassName: flox
       containers:
