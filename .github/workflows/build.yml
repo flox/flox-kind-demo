@@ -3,19 +3,12 @@ name: Build and Push
 on:
   push:
     branches: ["main"]
-    paths: ["Dockerfile"]
   pull_request:
     branches: ["main"]
-    paths: ["Dockerfile"]
 
 permissions:
   contents: read
   packages: write
-
-env:
-  # Defaults to ghcr.io/<owner>/<repo>
-  IMAGE_BASE: ghcr.io/${{ github.repository_owner }}/flox-kind
-  BUILDAH_FORMAT: docker  # broad runtime compatibility
 
 jobs:
   build:
@@ -23,28 +16,37 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Install Podman
-        run: |
-          sudo apt update
-          sudo apt -y install podman
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}     
 
-      - name: Build image
-        run: |
-          # temp local tag; we'll retag as :latest only on push events
-          podman build -t "${IMAGE_BASE}:ci-build" .
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/flox-kind
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=pr
 
-      - name: Log in to GHCR
-        if: ${{ github.event_name == 'push' }}
-        env:
-          CR_PAT: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "${CR_PAT}" | podman login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
 
-      - name: Tag & push :latest (main only)
-        if: ${{ github.event_name == 'push' }}
-        run: |
-          podman tag "${IMAGE_BASE}:ci-build" "${IMAGE_BASE}:latest"
-          podman push "${IMAGE_BASE}:latest"
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push Docker images
+        id: push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          platforms: "linux/arm64,linux/amd64"
+
+
 

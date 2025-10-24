@@ -6,7 +6,7 @@ __default:
 
 # Stand up the complete demo environment
 up:
-    colima start -a x86_64
+    colima start
     kind create cluster --config=Cluster.yaml --name flox-shim
     kubectl create ns flox
     kubectl apply -f RuntimeClass.yaml
