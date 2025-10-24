@@ -52,7 +52,7 @@ Check that your deployment is running:
 
 ```bash
 kubectl get pods
-kubectl logs deployment/flox-containerd-demo
+kubectl logs deployment/quotes
 ```
 
 
