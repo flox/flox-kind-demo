@@ -14,11 +14,6 @@ permissions:
   attestations: write
   id-token: write
 
-env:
-  # Defaults to ghcr.io/<owner>/<repo>
-  IMAGE_BASE: ghcr.io/${{ github.repository_owner }}/flox-kind
-  BUILDAH_FORMAT: docker  # broad runtime compatibility
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,6 +29,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}     
 
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/flox-kind
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=pr
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -44,8 +48,8 @@ jobs:
         id: push
         uses: docker/build-push-action@v6
         with:
-          push: false
-          tags: ghcr.io/${{ github.repository_owner }}/flox-kind
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
           platforms: "linux/arm64,linux/amd64"
 
 
