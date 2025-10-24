@@ -35,7 +35,12 @@
         "pkg-path": "kubectx"
       }
     },
-    "options": {}
+    "options": {},
+    "services": {
+      "port-forward": {
+        "command": "kubectl port-forward services/quotes 3000:3000"
+      }
+    }
   },
   "packages": [
     {
