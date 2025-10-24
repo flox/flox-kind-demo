@@ -2,7 +2,6 @@ FROM kindest/node:v1.34.0
 
 ENV FLOX_DISABLE_METRICS=true
 ARG SHELL=/bin/bash
-
 ARG TARGETARCH
 
 RUN apt update && apt install -y --no-install-recommends \
