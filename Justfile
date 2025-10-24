@@ -8,7 +8,6 @@ __default:
 up:
     colima start
     kind create cluster --config=Cluster.yaml --name flox-shim
-    kubectl create ns flox
     kubectl apply -f RuntimeClass.yaml
     kubectl apply -f redis.yaml
     kubectl apply -f quotes.yaml
