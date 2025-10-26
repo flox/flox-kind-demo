@@ -19,4 +19,4 @@ RUN set -eux; \
 	&& dpkg -i /tmp/flox.${PKG_ARCH}-linux.deb \
 	&& rm /tmp/flox.${PKG_ARCH}-linux.deb
 
-RUN flox activate -r flox/containerd-shim-flox-installer --trust
+RUN flox activate -r devusb/containerd-shim-flox-installer-1_7 --trust
