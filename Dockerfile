@@ -1,4 +1,4 @@
-FROM kindest/node:v1.34.0
+FROM kindest/node:v1.32.0
 
 ENV FLOX_DISABLE_METRICS=true
 ARG SHELL=/bin/bash
@@ -19,4 +19,4 @@ RUN set -eux; \
 	&& dpkg -i /tmp/flox.${PKG_ARCH}-linux.deb \
 	&& rm /tmp/flox.${PKG_ARCH}-linux.deb
 
-RUN flox activate -r flox/containerd-shim-flox-installer --trust
+RUN flox activate -r devusb/containerd-shim-flox-installer-2.1 --trust
