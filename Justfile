@@ -22,6 +22,6 @@ up:
 
 # Shut down and clean up everything
 down:
-    flox services stop
+    -flox services stop
     kind delete cluster --name flox-shim
     colima stop
