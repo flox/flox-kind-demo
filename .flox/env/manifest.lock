@@ -33,6 +33,9 @@
       },
       "kubectx": {
         "pkg-path": "kubectx"
+      },
+      "perl": {
+        "pkg-path": "perl"
       }
     },
     "options": {},
@@ -1090,6 +1093,138 @@
       ],
       "outputs": {
         "out": "/nix/store/liiq6r71mhpg6d3rs25mb2h7xacq2aj2-kubectx-0.9.5"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "perl",
+      "broken": false,
+      "derivation": "/nix/store/2msja9ym4z8djnf3ypcvv81nrsm6x2n5-perl-5.40.0.drv",
+      "description": "Standard implementation of the Perl 5 programming language",
+      "install_id": "perl",
+      "license": "Artistic-1.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
+      "name": "perl-5.40.0",
+      "pname": "perl",
+      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
+      "rev_count": 862643,
+      "rev_date": "2025-09-16T15:19:26Z",
+      "scrape_date": "2025-09-19T01:17:08.325816Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "5.40.0",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "devdoc": "/nix/store/1c639kbg4g2scnhl4cgim42pp99cw3ar-perl-5.40.0-devdoc",
+        "man": "/nix/store/dmqs38170gkf8imvfqazy7l5nyhj5370-perl-5.40.0-man",
+        "out": "/nix/store/n0nz3w8xr30d6wihp9a2z4ww9aq4dqmn-perl-5.40.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "perl",
+      "broken": false,
+      "derivation": "/nix/store/d738gcw0plf5sf02r9pfc5c7n5kzx7q8-perl-5.40.0.drv",
+      "description": "Standard implementation of the Perl 5 programming language",
+      "install_id": "perl",
+      "license": "Artistic-1.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
+      "name": "perl-5.40.0",
+      "pname": "perl",
+      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
+      "rev_count": 862643,
+      "rev_date": "2025-09-16T15:19:26Z",
+      "scrape_date": "2025-09-19T01:50:10.098632Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "5.40.0",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "devdoc": "/nix/store/qdan244qagq07dyafjl2p0nbjjry7zy8-perl-5.40.0-devdoc",
+        "man": "/nix/store/wc67k1b20fxfvpq7dka6ij5dhjp1acpn-perl-5.40.0-man",
+        "out": "/nix/store/n010s325l091rac99vm52hcnpzzypm2d-perl-5.40.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "perl",
+      "broken": false,
+      "derivation": "/nix/store/g024zkl47hpmv9w6xp61kfq7zjhpf0ci-perl-5.40.0.drv",
+      "description": "Standard implementation of the Perl 5 programming language",
+      "install_id": "perl",
+      "license": "Artistic-1.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
+      "name": "perl-5.40.0",
+      "pname": "perl",
+      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
+      "rev_count": 862643,
+      "rev_date": "2025-09-16T15:19:26Z",
+      "scrape_date": "2025-09-19T02:02:19.173443Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "5.40.0",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "devdoc": "/nix/store/i81szsmvsh4wyq7v56l81n52zc02k70p-perl-5.40.0-devdoc",
+        "man": "/nix/store/85splaxaqb8ra00ng4nqp3pwcv996f4q-perl-5.40.0-man",
+        "out": "/nix/store/qdsazmlxrchc01wx0kgkkz7axd435wh4-perl-5.40.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "perl",
+      "broken": false,
+      "derivation": "/nix/store/lhw9cl3zbzmb2zj7fpi8dhxf930h9253-perl-5.40.0.drv",
+      "description": "Standard implementation of the Perl 5 programming language",
+      "install_id": "perl",
+      "license": "Artistic-1.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
+      "name": "perl-5.40.0",
+      "pname": "perl",
+      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
+      "rev_count": 862643,
+      "rev_date": "2025-09-16T15:19:26Z",
+      "scrape_date": "2025-09-19T02:34:18.559820Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "5.40.0",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "devdoc": "/nix/store/dnd8d9zxah4ik6s9gb5val42rpddklph-perl-5.40.0-devdoc",
+        "man": "/nix/store/d85zjbvi2ngx8gqddpia81gmz9bk92zv-perl-5.40.0-man",
+        "out": "/nix/store/m3cc78gacmsq370nkbcszpmqs04k8zps-perl-5.40.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
