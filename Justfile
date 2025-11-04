@@ -7,6 +7,7 @@ __default:
 # Stand up the complete demo environment
 up:
     colima start
+    docker pull ghcr.io/flox/flox-kind:latest
     kind create cluster --config=Cluster.yaml --name flox-shim
     kubectl apply -f RuntimeClass.yaml
     kubectl apply -f redis.yaml
