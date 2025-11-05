@@ -16,13 +16,11 @@ spec:
     spec:
       runtimeClassName: flox
       containers:
-        # The following container is not used but is required by the
-        # Kubernetes pod specification. Any valid values can be used here.
         - name: quotes
+          # We provide `flox/empty` as a demonstration that the Flox
+          # environment requires nothing from the container image.
           image: flox/empty:1.0.0
-          # The following command is the command that is invoked by `flox activate`
-          # to keep the environment alive. It can be used to perform supplementary
-          # actions at startup, and when this command exits the pod is torn down.
+          # The command to run inside your environment
           command: ["quotes-app-go", "-r", "redis:6379"]
 ---
 apiVersion: v1
