@@ -20,4 +20,7 @@ RUN set -eux; \
 	&& rm /tmp/flox.${PKG_ARCH}-linux.deb
 
 # We only take the side-effect of running the installer environment hooks.
-RUN flox activate -r flox/containerd-shim-flox-installer --trust -- true
+RUN flox activate -r flox/containerd-shim-flox-installer --trust -- true \
+    && flox delete -f -d /root/.cache/flox/remote/flox/containerd-shim-flox-installer \
+    && flox gc \
+    && rm -rf /root/.cache /root/.local
