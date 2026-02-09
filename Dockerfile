@@ -19,5 +19,8 @@ RUN set -eux; \
 	&& dpkg -i /tmp/flox.${PKG_ARCH}-linux.deb \
 	&& rm /tmp/flox.${PKG_ARCH}-linux.deb
 
+# https://github.com/NixOS/nix/issues/5258
+RUN echo "filter-syscalls = false" >> /etc/nix/flox.conf
+
 # We only take the side-effect of running the installer environment hooks.
 RUN flox activate -r flox/containerd-shim-flox-installer --trust -- true
