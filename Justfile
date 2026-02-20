@@ -6,7 +6,6 @@ __default:
 
 # Stand up the complete demo environment
 up:
-    colima start
     docker pull ghcr.io/flox/flox-kind:latest
     kind create cluster --config=Cluster.yaml --name flox-shim
     kubectl apply -f RuntimeClass.yaml
@@ -25,4 +24,3 @@ up:
 down:
     -flox services stop
     kind delete cluster --name flox-shim
-    colima stop
