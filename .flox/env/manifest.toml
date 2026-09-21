@@ -23,3 +23,7 @@ perl.outputs = "all"
 command = "kubectl port-forward services/quotes 3000:3000"
 
 
+
+
+[options]
+activate.mode = "run"
