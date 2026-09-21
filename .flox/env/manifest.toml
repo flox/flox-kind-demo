@@ -13,9 +13,13 @@ gh.pkg-path = "gh"
 just.pkg-path = "just"
 just.outputs = "all"
 colima.pkg-path = "colima"
+colima.version = "0.8.4"
+colima.pkg-group = "vm"
 docker-client.pkg-path = "docker-client"
 perl.pkg-path = "perl"
 perl.outputs = "all"
 
 [services.port-forward]
 command = "kubectl port-forward services/quotes 3000:3000"
+
+
