@@ -1,17 +1,21 @@
-version = 1
+schema-version = "1.17.0"
 
 [install]
 kind.pkg-path = "kind"
 k9s.pkg-path = "k9s"
 kubectl.pkg-path = "kubectl"
+kubectl.outputs = "all"
 kubectx.pkg-path = "kubectx"
 iptables.pkg-path = "iptables"
 iptables.systems = ["aarch64-linux", "x86_64-linux"]
+iptables.outputs = "all"
 gh.pkg-path = "gh"
 just.pkg-path = "just"
+just.outputs = "all"
 colima.pkg-path = "colima"
 docker-client.pkg-path = "docker-client"
 perl.pkg-path = "perl"
+perl.outputs = "all"
 
 [services.port-forward]
 command = "kubectl port-forward services/quotes 3000:3000"
