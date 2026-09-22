@@ -1,10 +1,12 @@
 {
   "lockfile-version": 1,
   "manifest": {
-    "version": 1,
+    "schema-version": "1.17.0",
     "install": {
       "colima": {
-        "pkg-path": "colima"
+        "pkg-path": "colima",
+        "pkg-group": "vm",
+        "version": "0.8.4"
       },
       "docker-client": {
         "pkg-path": "docker-client"
@@ -17,10 +19,12 @@
         "systems": [
           "aarch64-linux",
           "x86_64-linux"
-        ]
+        ],
+        "outputs": "all"
       },
       "just": {
-        "pkg-path": "just"
+        "pkg-path": "just",
+        "outputs": "all"
       },
       "k9s": {
         "pkg-path": "k9s"
@@ -29,16 +33,22 @@
         "pkg-path": "kind"
       },
       "kubectl": {
-        "pkg-path": "kubectl"
+        "pkg-path": "kubectl",
+        "outputs": "all"
       },
       "kubectx": {
         "pkg-path": "kubectx"
       },
       "perl": {
-        "pkg-path": "perl"
+        "pkg-path": "perl",
+        "outputs": "all"
       }
     },
-    "options": {},
+    "options": {
+      "activate": {
+        "mode": "run"
+      }
+    },
     "services": {
       "port-forward": {
         "command": "kubectl port-forward services/quotes 3000:3000"
@@ -47,150 +57,29 @@
   },
   "packages": [
     {
-      "attr_path": "colima",
-      "broken": false,
-      "derivation": "/nix/store/xci42gz9m0rihza0wj7s8is6aaqz7jwi-colima-0.8.4.drv",
-      "description": "Container runtimes with minimal setup",
-      "install_id": "colima",
-      "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "colima-0.8.4",
-      "pname": "colima",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:16:42.016500Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "0.8.4",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/cnc23g03m1zc0sbl9jpa6kkscakj09fv-colima-0.8.4"
-      },
-      "system": "aarch64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "colima",
-      "broken": false,
-      "derivation": "/nix/store/cp2dj2gdy94c8ywqx3229wn09phkm9wy-colima-0.8.4.drv",
-      "description": "Container runtimes with minimal setup",
-      "install_id": "colima",
-      "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "colima-0.8.4",
-      "pname": "colima",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:49:25.875736Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "0.8.4",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/34bb8fm850r8i3kgmcva21mwavksx09m-colima-0.8.4"
-      },
-      "system": "aarch64-linux",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "colima",
-      "broken": false,
-      "derivation": "/nix/store/xij6j89x4gdxi46v6cnyxlzd7ij4mbap-colima-0.8.4.drv",
-      "description": "Container runtimes with minimal setup",
-      "install_id": "colima",
-      "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "colima-0.8.4",
-      "pname": "colima",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:01:51.793243Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "0.8.4",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/qbf469zn1dfaiqs16vc1x597yfyirpgz-colima-0.8.4"
-      },
-      "system": "x86_64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "colima",
-      "broken": false,
-      "derivation": "/nix/store/ib90p9xg1sblnhhcffggd4avlbln226b-colima-0.8.4.drv",
-      "description": "Container runtimes with minimal setup",
-      "install_id": "colima",
-      "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "colima-0.8.4",
-      "pname": "colima",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:33:31.677685Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "0.8.4",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/d2d0zwnk6r8yyf1lijyk52cnmmv6hrqd-colima-0.8.4"
-      },
-      "system": "x86_64-linux",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
       "attr_path": "docker-client",
       "broken": false,
-      "derivation": "/nix/store/5b3fwg8sl512mfk5j9m4yq0i8x4bd437-docker-28.3.3.drv",
+      "derivation": "/nix/store/s1gajw22ky42k3i8r2xds1gfvcns378b-docker-29.8.0.drv",
       "description": "Open source project to pack, ship and run any application as a lightweight container",
       "install_id": "docker-client",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "docker-28.3.3",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "docker-29.8.0",
       "pname": "docker-client",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:16:42.283801Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T04:57:58.575798Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "28.3.3",
+      "version": "29.8.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/yhq84djizcvvhwcnkmwklgg2bgwcp6iq-docker-28.3.3"
+        "out": "/nix/store/qqc1lqglm0331y9khnda76a8bmrxm3c5-docker-29.8.0"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -199,28 +88,27 @@
     {
       "attr_path": "docker-client",
       "broken": false,
-      "derivation": "/nix/store/3racs0n1v09rwac97hq8nv8n7jf46wcj-docker-28.3.3.drv",
+      "derivation": "/nix/store/mq4gz8y0wd1wm0ywbkih72ndbj3v5n7b-docker-29.8.0.drv",
       "description": "Open source project to pack, ship and run any application as a lightweight container",
       "install_id": "docker-client",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "docker-28.3.3",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "docker-29.8.0",
       "pname": "docker-client",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:49:26.195662Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T05:30:52.449204Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "28.3.3",
+      "version": "29.8.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/aix0x1cjhgb7jqa69npq01dzh1ja99ly-docker-28.3.3"
+        "out": "/nix/store/k20jkjy5har4pir80q38jamfnvjkqlda-docker-29.8.0"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -229,58 +117,27 @@
     {
       "attr_path": "docker-client",
       "broken": false,
-      "derivation": "/nix/store/bpshn5r6ix9dbihj54nn3pwq5aprmiq4-docker-28.3.3.drv",
+      "derivation": "/nix/store/rib9wlf42n3bvplz4v93gs6l079iz7v1-docker-29.8.0.drv",
       "description": "Open source project to pack, ship and run any application as a lightweight container",
       "install_id": "docker-client",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "docker-28.3.3",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "docker-29.8.0",
       "pname": "docker-client",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:01:52.008506Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T06:07:11.425179Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "28.3.3",
+      "version": "29.8.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/rbf2x5dzickvx7s1n3gyd2gzhc1kizcp-docker-28.3.3"
-      },
-      "system": "x86_64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "docker-client",
-      "broken": false,
-      "derivation": "/nix/store/apfzj9n3r3m26dhkb3hnnrcr50pnggvs-docker-28.3.3.drv",
-      "description": "Open source project to pack, ship and run any application as a lightweight container",
-      "install_id": "docker-client",
-      "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "docker-28.3.3",
-      "pname": "docker-client",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:33:32.048606Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "28.3.3",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/0842alb9fb1nlj8yr89v86da9142nfxc-docker-28.3.3"
+        "out": "/nix/store/p16zpk2wylm1g5vgwk21crilj0rnpiya-docker-29.8.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -289,28 +146,28 @@
     {
       "attr_path": "gh",
       "broken": false,
-      "derivation": "/nix/store/68ingvq9b5h1yzrpi67m1na995m35g79-gh-2.79.0.drv",
+      "derivation": "/nix/store/7amcfkc6c17hbdgnjvgmm03ljb66iddd-gh-2.100.0.drv",
       "description": "GitHub CLI tool",
       "install_id": "gh",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "gh-2.79.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "gh-2.100.0",
       "pname": "gh",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:16:42.725134Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T04:57:59.165086Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "2.79.0",
+      "version": "2.100.0",
       "outputs_to_install": [
+        "out",
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/ky5yynv151w1v0h2xby8knzy23b9csbb-gh-2.79.0"
+        "out": "/nix/store/7acyfp9kyyxm341rb3mivz9kmbamambd-gh-2.100.0"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -319,28 +176,28 @@
     {
       "attr_path": "gh",
       "broken": false,
-      "derivation": "/nix/store/lp3w745x7x7qynfjaz8va8d0cw5i6mm8-gh-2.79.0.drv",
+      "derivation": "/nix/store/0736p773qpyn8ajgn4g9cwd4n9q3ziw7-gh-2.100.0.drv",
       "description": "GitHub CLI tool",
       "install_id": "gh",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "gh-2.79.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "gh-2.100.0",
       "pname": "gh",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:49:26.906893Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T05:30:53.376172Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "2.79.0",
+      "version": "2.100.0",
       "outputs_to_install": [
+        "out",
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/zvljqh8dxlp71r4gzc3js3s35fa2l3zb-gh-2.79.0"
+        "out": "/nix/store/69rn2vpc59sd7mhwdmgygl034jdagkpv-gh-2.100.0"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -349,58 +206,28 @@
     {
       "attr_path": "gh",
       "broken": false,
-      "derivation": "/nix/store/690585ipgvj8755fk29mxniw2vd4ja13-gh-2.79.0.drv",
+      "derivation": "/nix/store/v6zzckdhfbbflx8wlpynbbg88mkrpbmk-gh-2.100.0.drv",
       "description": "GitHub CLI tool",
       "install_id": "gh",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "gh-2.79.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "gh-2.100.0",
       "pname": "gh",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:01:52.451103Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T06:07:12.430518Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "2.79.0",
+      "version": "2.100.0",
       "outputs_to_install": [
+        "out",
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/ikvh3fzss3p70y6izxcppankis418rlz-gh-2.79.0"
-      },
-      "system": "x86_64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "gh",
-      "broken": false,
-      "derivation": "/nix/store/6s3sds15db854kv81jghxhrvx5ic4rd8-gh-2.79.0.drv",
-      "description": "GitHub CLI tool",
-      "install_id": "gh",
-      "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "gh-2.79.0",
-      "pname": "gh",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:33:32.868202Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "2.79.0",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/hx0j1gvffm0m3gx5m50gjjggkwba0zxc-gh-2.79.0"
+        "out": "/nix/store/13hixqsd12vpsgjzc89fn1764ypqrqhk-gh-2.100.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -409,32 +236,31 @@
     {
       "attr_path": "iptables",
       "broken": false,
-      "derivation": "/nix/store/3yv4p5wg1sf1wbbdp3snbxj2ijvqhchn-iptables-1.8.11.drv",
+      "derivation": "/nix/store/d8s1vc142ap710wkp3amb6sicgbwl81c-iptables-1.8.13.drv",
       "description": "Program to configure the Linux IP packet filtering ruleset",
       "install_id": "iptables",
       "license": "GPL-2.0-or-later",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "iptables-1.8.11",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "iptables-1.8.13",
       "pname": "iptables",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:49:45.620248Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T05:31:13.979485Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.8.11",
+      "version": "1.8.13",
       "outputs_to_install": [
         "man",
         "out"
       ],
       "outputs": {
-        "dev": "/nix/store/ylpzm3wn8xrwsy68g2k6h4lrnf0sr4f2-iptables-1.8.11-dev",
-        "lib": "/nix/store/l45gfkcfyx3p529d8cp5zfs3wq5dn4dx-iptables-1.8.11-lib",
-        "man": "/nix/store/4r298zzfywwilb6gaap9iqp4qspl8ma2-iptables-1.8.11-man",
-        "out": "/nix/store/rj478f7yn1y0hp0ibw1k9hjwgx4izdps-iptables-1.8.11"
+        "dev": "/nix/store/d5jhlhn62wmh01j551a9d35bzziapv3v-iptables-1.8.13-dev",
+        "lib": "/nix/store/bp2q1fxw4yfj1wkxjm9wa1xmpyxs56l7-iptables-1.8.13-lib",
+        "man": "/nix/store/6qls701isjkw6nczpwcqypzglk7i2adb-iptables-1.8.13-man",
+        "out": "/nix/store/2gl1g8549r89ah0n4r69bw4yga2wigcq-iptables-1.8.13"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -443,32 +269,31 @@
     {
       "attr_path": "iptables",
       "broken": false,
-      "derivation": "/nix/store/9qnjgd5vx73f8ibl1fpjhzvkyfawrwfj-iptables-1.8.11.drv",
+      "derivation": "/nix/store/6ahg0p5kk8p1pr922kai8hz9cjbd4s8p-iptables-1.8.13.drv",
       "description": "Program to configure the Linux IP packet filtering ruleset",
       "install_id": "iptables",
       "license": "GPL-2.0-or-later",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "iptables-1.8.11",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "iptables-1.8.13",
       "pname": "iptables",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:33:52.594919Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T06:07:33.644638Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.8.11",
+      "version": "1.8.13",
       "outputs_to_install": [
         "man",
         "out"
       ],
       "outputs": {
-        "dev": "/nix/store/mapxv0sc6d58rlsjf6yr15c5abjfirhy-iptables-1.8.11-dev",
-        "lib": "/nix/store/hnzd7yy52arxllp9ilsxjankih7kf37j-iptables-1.8.11-lib",
-        "man": "/nix/store/miaryccwkfzm8jlbax7bsl98shjgxd1k-iptables-1.8.11-man",
-        "out": "/nix/store/0aiv0yaim1gbwxscvmngwzn0311h2z06-iptables-1.8.11"
+        "dev": "/nix/store/i5h7d6fckm7cwy1f7yz3vm6sajvgw80h-iptables-1.8.13-dev",
+        "lib": "/nix/store/13hl2wvjdwjcmk7zf98a06lkfgyf8pw5-iptables-1.8.13-lib",
+        "man": "/nix/store/lj49paflhslp0dsprhs89gbln4fibir9-iptables-1.8.13-man",
+        "out": "/nix/store/ghv1q328il86gx71a6kfwspzjz70j8nw-iptables-1.8.13"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -477,31 +302,30 @@
     {
       "attr_path": "just",
       "broken": false,
-      "derivation": "/nix/store/khsgi9byqrl5m1navqcfv1701zc0zlcg-just-1.42.4.drv",
+      "derivation": "/nix/store/xhflrb4vyqqqc1j09rjcgk3gd27n76j4-just-1.58.0.drv",
       "description": "Handy way to save and run project-specific commands",
       "install_id": "just",
       "license": "CC0-1.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "just-1.42.4",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "just-1.58.0",
       "pname": "just",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:16:57.518093Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T04:58:16.293512Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.42.4",
+      "version": "1.58.0",
       "outputs_to_install": [
         "man",
         "out"
       ],
       "outputs": {
-        "doc": "/nix/store/8xavlkm9j3xx4qllzmy5f45fzv9xfb67-just-1.42.4-doc",
-        "man": "/nix/store/ckppkxqp5ip8kaprwbr7x2d9a5qmrcwf-just-1.42.4-man",
-        "out": "/nix/store/ybxppkvhr3k3ssqhbgccmha29dkgk8f7-just-1.42.4"
+        "doc": "/nix/store/wfs31mbwslvi17fxswf81x0a83qcmnyq-just-1.58.0-doc",
+        "man": "/nix/store/s8abw9ifkmxk79z8zpn6zm9zrpbmh9zb-just-1.58.0-man",
+        "out": "/nix/store/kcyk3qjxrxbqv110yz408277m1i55faf-just-1.58.0"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -510,31 +334,30 @@
     {
       "attr_path": "just",
       "broken": false,
-      "derivation": "/nix/store/8xb1yvd8qd4w1pl7dbd8ds9g8l84w0pc-just-1.42.4.drv",
+      "derivation": "/nix/store/pclkrr58iby2lh2fqhjjmpvwj2538kzf-just-1.58.0.drv",
       "description": "Handy way to save and run project-specific commands",
       "install_id": "just",
       "license": "CC0-1.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "just-1.42.4",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "just-1.58.0",
       "pname": "just",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:49:46.230472Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T05:31:14.708953Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.42.4",
+      "version": "1.58.0",
       "outputs_to_install": [
         "man",
         "out"
       ],
       "outputs": {
-        "doc": "/nix/store/fwfx6fh2cai9rfkfps9swh9wq593n0aa-just-1.42.4-doc",
-        "man": "/nix/store/7czcmnfirfmsh2qihr6far9jiq9a8542-just-1.42.4-man",
-        "out": "/nix/store/czphzid3fs3bp8afmq1jhidz2cvrrnsd-just-1.42.4"
+        "doc": "/nix/store/pvgg8yxzhgld6kmy58bd4qxyihc87w1r-just-1.58.0-doc",
+        "man": "/nix/store/abh0yba8y6lk945hg6b0lq5g6vgai225-just-1.58.0-man",
+        "out": "/nix/store/2wdl8204rm1sgd31hxf24ykgw0jhrfnd-just-1.58.0"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -543,64 +366,30 @@
     {
       "attr_path": "just",
       "broken": false,
-      "derivation": "/nix/store/k5k4znc31dxz214yfi4b2zpd2fdwm0lv-just-1.42.4.drv",
+      "derivation": "/nix/store/qc80gms126x8835chicai7zkawkvwg4c-just-1.58.0.drv",
       "description": "Handy way to save and run project-specific commands",
       "install_id": "just",
       "license": "CC0-1.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "just-1.42.4",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "just-1.58.0",
       "pname": "just",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:02:07.508621Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T06:07:34.380176Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.42.4",
+      "version": "1.58.0",
       "outputs_to_install": [
         "man",
         "out"
       ],
       "outputs": {
-        "doc": "/nix/store/d97hjbj7hjawid5kslhyijkpaha4fq2l-just-1.42.4-doc",
-        "man": "/nix/store/p2jp63pc1wdlb55j11frh1r9z4fvzsp5-just-1.42.4-man",
-        "out": "/nix/store/ii2mcj182bl1y6h1qhz28rpidpi9wzhy-just-1.42.4"
-      },
-      "system": "x86_64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "just",
-      "broken": false,
-      "derivation": "/nix/store/qjnl20dvbzzanbsjkhyf09njv8mfqcy4-just-1.42.4.drv",
-      "description": "Handy way to save and run project-specific commands",
-      "install_id": "just",
-      "license": "CC0-1.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "just-1.42.4",
-      "pname": "just",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:33:53.243359Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "1.42.4",
-      "outputs_to_install": [
-        "man",
-        "out"
-      ],
-      "outputs": {
-        "doc": "/nix/store/f3q8pxx7sl7nkw3p9c63j60nwvcn50rj-just-1.42.4-doc",
-        "man": "/nix/store/7qdcpikn194jivbgn84iizvr7cmpk0hb-just-1.42.4-man",
-        "out": "/nix/store/i5l66qbwry5skvwac6zxi81xq6qa3qwr-just-1.42.4"
+        "doc": "/nix/store/3kkygdf8x15png0ghk45r2g8px981zrd-just-1.58.0-doc",
+        "man": "/nix/store/ihi5s36gfidvbf6wrymh0z6qjb69bvhx-just-1.58.0-man",
+        "out": "/nix/store/nvydswi7ickfaim3l29afrm2238fjzlv-just-1.58.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -609,28 +398,27 @@
     {
       "attr_path": "k9s",
       "broken": false,
-      "derivation": "/nix/store/vzp05zp2295skljhdx7alzfr2jlhycv1-k9s-0.50.9.drv",
+      "derivation": "/nix/store/268vgzsm1mvyss4x2snw01lf96zsqi3s-k9s-0.51.0.drv",
       "description": "Kubernetes CLI To Manage Your Clusters In Style",
       "install_id": "k9s",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "k9s-0.50.9",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "k9s-0.51.0",
       "pname": "k9s",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:16:57.543085Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T04:58:16.324631Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "0.50.9",
+      "version": "0.51.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/73nhddg42hq5an2nhjxkyps637s0rc4n-k9s-0.50.9"
+        "out": "/nix/store/3kva8vx9rnk5qbza32xmksqms522km5l-k9s-0.51.0"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -639,28 +427,27 @@
     {
       "attr_path": "k9s",
       "broken": false,
-      "derivation": "/nix/store/4j881g6n3m89x9y5xnjf9sifijplp1dd-k9s-0.50.9.drv",
+      "derivation": "/nix/store/rrvvajhl6y0x8c5wrrn8cys73v3rga81-k9s-0.51.0.drv",
       "description": "Kubernetes CLI To Manage Your Clusters In Style",
       "install_id": "k9s",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "k9s-0.50.9",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "k9s-0.51.0",
       "pname": "k9s",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:49:46.273408Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T05:31:14.754662Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "0.50.9",
+      "version": "0.51.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/3xdpyzlhw8nw43dkcp576fjccxzwrwl8-k9s-0.50.9"
+        "out": "/nix/store/yca7sbm0lky5w6jzw8sz98lq888maxzq-k9s-0.51.0"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -669,58 +456,27 @@
     {
       "attr_path": "k9s",
       "broken": false,
-      "derivation": "/nix/store/ldblhijxw04dspfh795k976idpg4hhsm-k9s-0.50.9.drv",
+      "derivation": "/nix/store/4s4syv8zs7nc2y3lg8np4sxx1h6b8wqb-k9s-0.51.0.drv",
       "description": "Kubernetes CLI To Manage Your Clusters In Style",
       "install_id": "k9s",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "k9s-0.50.9",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "k9s-0.51.0",
       "pname": "k9s",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:02:07.535486Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T06:07:34.424389Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "0.50.9",
+      "version": "0.51.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/c4p8inzfpjmr5kdshihvnfqw67ix7nms-k9s-0.50.9"
-      },
-      "system": "x86_64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "k9s",
-      "broken": false,
-      "derivation": "/nix/store/78kwidjamfxlrcg0ask97qsnrs4nn2hz-k9s-0.50.9.drv",
-      "description": "Kubernetes CLI To Manage Your Clusters In Style",
-      "install_id": "k9s",
-      "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "k9s-0.50.9",
-      "pname": "k9s",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:33:53.285712Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "0.50.9",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/2hgbs9rps8sc7yfyijgvgdksg4bnhrs2-k9s-0.50.9"
+        "out": "/nix/store/b689xv2zxjdm9xy2xf51q9spsvr4zlfy-k9s-0.51.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -729,28 +485,27 @@
     {
       "attr_path": "kind",
       "broken": false,
-      "derivation": "/nix/store/6mlqqy6pcml9a590vsrlh4pfxis40i05-kind-0.30.0.drv",
+      "derivation": "/nix/store/ip82y582jgsd77dcxmlw7n21xyky53cz-kind-0.32.0.drv",
       "description": "Kubernetes IN Docker - local clusters for testing Kubernetes",
       "install_id": "kind",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kind-0.30.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "kind-0.32.0",
       "pname": "kind",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:16:57.841238Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T04:58:16.710671Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "0.30.0",
+      "version": "0.32.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/f1zv1knf82xycmg383rgmyp83h61hnin-kind-0.30.0"
+        "out": "/nix/store/nj6z9mr4np887y8066wcrms6a2x2hz3v-kind-0.32.0"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -759,28 +514,27 @@
     {
       "attr_path": "kind",
       "broken": false,
-      "derivation": "/nix/store/3hjp9dcs13h19433z8ikrwmzbamm96ks-kind-0.30.0.drv",
+      "derivation": "/nix/store/253fqmv9k9phwpkdccz28bc2mc3rkddn-kind-0.32.0.drv",
       "description": "Kubernetes IN Docker - local clusters for testing Kubernetes",
       "install_id": "kind",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kind-0.30.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "kind-0.32.0",
       "pname": "kind",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:49:47.380563Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T05:31:15.965367Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "0.30.0",
+      "version": "0.32.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/y6nb7p504s22yc5crh6mxqnxcvl2wbah-kind-0.30.0"
+        "out": "/nix/store/xi4x0w04xr4zrd4fc4zfnf5c1dzbycr9-kind-0.32.0"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -789,58 +543,27 @@
     {
       "attr_path": "kind",
       "broken": false,
-      "derivation": "/nix/store/zpi1z8lzxaaa9d53xmqq81pibmnrmcqx-kind-0.30.0.drv",
+      "derivation": "/nix/store/hi15ba2rymn3khis53d422j7ff6mxa6a-kind-0.32.0.drv",
       "description": "Kubernetes IN Docker - local clusters for testing Kubernetes",
       "install_id": "kind",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kind-0.30.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "kind-0.32.0",
       "pname": "kind",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:02:07.851034Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T06:07:35.616114Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "0.30.0",
+      "version": "0.32.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/1hi5hxjdklrmjrvi9j142h1aakr458ia-kind-0.30.0"
-      },
-      "system": "x86_64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "kind",
-      "broken": false,
-      "derivation": "/nix/store/8ciam72mgb1dchavyl5czis4cgbs3nbd-kind-0.30.0.drv",
-      "description": "Kubernetes IN Docker - local clusters for testing Kubernetes",
-      "install_id": "kind",
-      "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kind-0.30.0",
-      "pname": "kind",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:33:54.390013Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "0.30.0",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/myld9sswhrl252bjrr60nl2ls9338vf3-kind-0.30.0"
+        "out": "/nix/store/nv30xwfiv6cb30kjc8wkk1ps7rwmhgp4-kind-0.32.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -849,31 +572,30 @@
     {
       "attr_path": "kubectl",
       "broken": false,
-      "derivation": "/nix/store/0vbp8wpnkj2badg0gjnapi0ah2iz06gn-kubectl-1.33.4.drv",
+      "derivation": "/nix/store/4vj9ji72qij34az6mxxi9qsvlf26zrvx-kubectl-1.37.0.drv",
       "description": "Kubernetes CLI",
       "install_id": "kubectl",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kubectl-1.33.4",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "kubectl-1.37.0",
       "pname": "kubectl",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:16:58.058350Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T04:58:16.995910Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.33.4",
+      "version": "1.37.0",
       "outputs_to_install": [
         "man",
         "out"
       ],
       "outputs": {
-        "convert": "/nix/store/p7xb87g2vz00n97fhaaqwr9jdvcp5647-kubectl-1.33.4-convert",
-        "man": "/nix/store/1ax04d2wdfp63df3gbjdsq523ql895yc-kubectl-1.33.4-man",
-        "out": "/nix/store/l9qa55xhnsif5bd8jc558pl2kraiwisx-kubectl-1.33.4"
+        "convert": "/nix/store/ns8i8ibppjgi4w80f2ppxc2vmkcqqs2g-kubectl-1.37.0-convert",
+        "man": "/nix/store/dw6qxp3v32ilw0jws5pnkw5hz7skacw7-kubectl-1.37.0-man",
+        "out": "/nix/store/v43l678086pb5q6szcqkmwvfxd386yai-kubectl-1.37.0"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -882,31 +604,30 @@
     {
       "attr_path": "kubectl",
       "broken": false,
-      "derivation": "/nix/store/c3mqyjx6my9lxfm0p72011cgsjiminfa-kubectl-1.33.4.drv",
+      "derivation": "/nix/store/997clcyspdhygrm8kxjsmikynsc6km2s-kubectl-1.37.0.drv",
       "description": "Kubernetes CLI",
       "install_id": "kubectl",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kubectl-1.33.4",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "kubectl-1.37.0",
       "pname": "kubectl",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:49:47.829080Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T05:31:16.439005Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.33.4",
+      "version": "1.37.0",
       "outputs_to_install": [
         "man",
         "out"
       ],
       "outputs": {
-        "convert": "/nix/store/5sxzhci6fxn8jv3x9xkab1jdb43ynpzr-kubectl-1.33.4-convert",
-        "man": "/nix/store/5jnghhpmiympxr759s1pqbksg3gld6d8-kubectl-1.33.4-man",
-        "out": "/nix/store/a95sq4yvhbrh4njn49glnp2xmbd3k3q1-kubectl-1.33.4"
+        "convert": "/nix/store/zk7rc70cmg57pxy4rsrfvlvipj55jyd0-kubectl-1.37.0-convert",
+        "man": "/nix/store/f10ig7zrahp8cxazh185v561vb9bcvcc-kubectl-1.37.0-man",
+        "out": "/nix/store/rzxxk7xn7fglccxy8jp6797n020scw51-kubectl-1.37.0"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -915,64 +636,30 @@
     {
       "attr_path": "kubectl",
       "broken": false,
-      "derivation": "/nix/store/zdvpzqg50kf7xd8jmfxxfvxbc61m4ma9-kubectl-1.33.4.drv",
+      "derivation": "/nix/store/dl80lbchmnl3y8hwxa469rsm1n2lljxm-kubectl-1.37.0.drv",
       "description": "Kubernetes CLI",
       "install_id": "kubectl",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kubectl-1.33.4",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "kubectl-1.37.0",
       "pname": "kubectl",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:02:08.082978Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T06:07:36.077604Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.33.4",
+      "version": "1.37.0",
       "outputs_to_install": [
         "man",
         "out"
       ],
       "outputs": {
-        "convert": "/nix/store/2kfp817d37kbsrjh48f8l26hmf12b97z-kubectl-1.33.4-convert",
-        "man": "/nix/store/q5gf3an5cmfzyl2wqw21ll01yfmjxm0j-kubectl-1.33.4-man",
-        "out": "/nix/store/417lxr3l5cy3m86iywhhrkbkx2j9y1xk-kubectl-1.33.4"
-      },
-      "system": "x86_64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "kubectl",
-      "broken": false,
-      "derivation": "/nix/store/x8zxj6p4jj0j908py74hwr0kl80sa2y3-kubectl-1.33.4.drv",
-      "description": "Kubernetes CLI",
-      "install_id": "kubectl",
-      "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kubectl-1.33.4",
-      "pname": "kubectl",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:33:54.823861Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "1.33.4",
-      "outputs_to_install": [
-        "man",
-        "out"
-      ],
-      "outputs": {
-        "convert": "/nix/store/1yhls3wrancjn52md7552kyalbh7dd5b-kubectl-1.33.4-convert",
-        "man": "/nix/store/75afy3w5985pck1f7bvwwq7gzawf9i9c-kubectl-1.33.4-man",
-        "out": "/nix/store/abp5rhv8vnij5k08m5id75vdq4nnkqqq-kubectl-1.33.4"
+        "convert": "/nix/store/k22p9zr5ib2cmawcxi4wpfj81hbxvy8p-kubectl-1.37.0-convert",
+        "man": "/nix/store/zwpgc7v191ahphn9b09n91mhsc3a1h2y-kubectl-1.37.0-man",
+        "out": "/nix/store/a8v06bvfssmp8hllrjyv1mh62yqxzh5f-kubectl-1.37.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -981,28 +668,27 @@
     {
       "attr_path": "kubectx",
       "broken": false,
-      "derivation": "/nix/store/kbmzn2vsqv7zsjb18mpic651c9frx728-kubectx-0.9.5.drv",
+      "derivation": "/nix/store/y1vlvh32j79d82z9b3bhrwfhaw92d957-kubectx-0.11.0.drv",
       "description": "Fast way to switch between clusters and namespaces in kubectl",
       "install_id": "kubectx",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kubectx-0.9.5",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "kubectx-0.11.0",
       "pname": "kubectx",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:16:58.089140Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T04:58:17.024690Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "0.9.5",
+      "version": "0.11.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/35ybq8izdp7ky49j8rcr8x1ynlshpbgn-kubectx-0.9.5"
+        "out": "/nix/store/22fvxwjaf1bdxwa0nlw8j8wkwipskb5d-kubectx-0.11.0"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -1011,28 +697,27 @@
     {
       "attr_path": "kubectx",
       "broken": false,
-      "derivation": "/nix/store/pjx415w2clh2kq1vjki4j6zvyngnzfr9-kubectx-0.9.5.drv",
+      "derivation": "/nix/store/5qhc5hcls6w4fx1vnvbwckkz6cjpkv30-kubectx-0.11.0.drv",
       "description": "Fast way to switch between clusters and namespaces in kubectl",
       "install_id": "kubectx",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kubectx-0.9.5",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "kubectx-0.11.0",
       "pname": "kubectx",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:49:47.865309Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T05:31:16.472861Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "0.9.5",
+      "version": "0.11.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/80gd24nhym4w7jds14lzs1fxkywz9ckq-kubectx-0.9.5"
+        "out": "/nix/store/2b0bjrw1ha4gfn68inkxmy20z0ljmg7l-kubectx-0.11.0"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -1041,58 +726,27 @@
     {
       "attr_path": "kubectx",
       "broken": false,
-      "derivation": "/nix/store/p1jvg94bfy8g74bi7ibdjhxxsmk6qkn4-kubectx-0.9.5.drv",
+      "derivation": "/nix/store/pcd810b9yq7mxi2jrllvnpdd33sm1647-kubectx-0.11.0.drv",
       "description": "Fast way to switch between clusters and namespaces in kubectl",
       "install_id": "kubectx",
       "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kubectx-0.9.5",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "kubectx-0.11.0",
       "pname": "kubectx",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:02:08.108935Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T06:07:36.110782Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "0.9.5",
+      "version": "0.11.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/jbvzmhra9fl0g8n5f8p69da28z0qrv4f-kubectx-0.9.5"
-      },
-      "system": "x86_64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "kubectx",
-      "broken": false,
-      "derivation": "/nix/store/62q047xgzxri9lj989xyb3gbnw79crkz-kubectx-0.9.5.drv",
-      "description": "Fast way to switch between clusters and namespaces in kubectl",
-      "install_id": "kubectx",
-      "license": "Apache-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "kubectx-0.9.5",
-      "pname": "kubectx",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:33:54.856047Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "0.9.5",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/liiq6r71mhpg6d3rs25mb2h7xacq2aj2-kubectx-0.9.5"
+        "out": "/nix/store/lsy7wv4mxiy0lr2zm8akz30rm1h26yf7-kubectx-0.11.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -1101,31 +755,31 @@
     {
       "attr_path": "perl",
       "broken": false,
-      "derivation": "/nix/store/2msja9ym4z8djnf3ypcvv81nrsm6x2n5-perl-5.40.0.drv",
+      "derivation": "/nix/store/dhkbasg2n6vhkkrihxx793zmjqcb6ph1-perl-5.42.3.drv",
       "description": "Standard implementation of the Perl 5 programming language",
       "install_id": "perl",
       "license": "Artistic-1.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "perl-5.40.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "perl-5.42.3",
       "pname": "perl",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:17:08.325816Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T04:58:30.931180Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "5.40.0",
+      "version": "5.42.3",
       "outputs_to_install": [
         "man",
+        "out",
         "out"
       ],
       "outputs": {
-        "devdoc": "/nix/store/1c639kbg4g2scnhl4cgim42pp99cw3ar-perl-5.40.0-devdoc",
-        "man": "/nix/store/dmqs38170gkf8imvfqazy7l5nyhj5370-perl-5.40.0-man",
-        "out": "/nix/store/n0nz3w8xr30d6wihp9a2z4ww9aq4dqmn-perl-5.40.0"
+        "devdoc": "/nix/store/nzkk48dpw3z1qac7b2b1mwwwwcgs0b7a-perl-5.42.3-devdoc",
+        "man": "/nix/store/hfq7wfq98yx4h1mk858a72q9nsczn7k0-perl-5.42.3-man",
+        "out": "/nix/store/0ns85sqbjrfqcw0ihp1axkpm5g603d73-perl-5.42.3"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -1134,31 +788,32 @@
     {
       "attr_path": "perl",
       "broken": false,
-      "derivation": "/nix/store/d738gcw0plf5sf02r9pfc5c7n5kzx7q8-perl-5.40.0.drv",
+      "derivation": "/nix/store/qvsn9phc59c5gxsbaqxdqjarj0micagw-perl-5.42.3.drv",
       "description": "Standard implementation of the Perl 5 programming language",
       "install_id": "perl",
       "license": "Artistic-1.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "perl-5.40.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "perl-5.42.3",
       "pname": "perl",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T01:50:10.098632Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T05:31:39.878446Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "5.40.0",
+      "version": "5.42.3",
       "outputs_to_install": [
         "man",
+        "out",
+        "out",
         "out"
       ],
       "outputs": {
-        "devdoc": "/nix/store/qdan244qagq07dyafjl2p0nbjjry7zy8-perl-5.40.0-devdoc",
-        "man": "/nix/store/wc67k1b20fxfvpq7dka6ij5dhjp1acpn-perl-5.40.0-man",
-        "out": "/nix/store/n010s325l091rac99vm52hcnpzzypm2d-perl-5.40.0"
+        "devdoc": "/nix/store/dddqy7554c72zm9ryvdap814p9sqnnxa-perl-5.42.3-devdoc",
+        "man": "/nix/store/idac425pmb093hsyip7i8h7yj2d377xc-perl-5.42.3-man",
+        "out": "/nix/store/wlnxy8mxf0dgsk8qn14z0s6qs9j5idyp-perl-5.42.3"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -1167,67 +822,125 @@
     {
       "attr_path": "perl",
       "broken": false,
-      "derivation": "/nix/store/g024zkl47hpmv9w6xp61kfq7zjhpf0ci-perl-5.40.0.drv",
+      "derivation": "/nix/store/j432y32a9i9azzifwcqng7k27r81n03s-perl-5.42.3.drv",
       "description": "Standard implementation of the Perl 5 programming language",
       "install_id": "perl",
       "license": "Artistic-1.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "perl-5.40.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "name": "perl-5.42.3",
       "pname": "perl",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:02:19.173443Z",
+      "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "rev_count": 1076192,
+      "rev_date": "2026-09-19T02:38:33Z",
+      "scrape_date": "2026-09-20T06:08:01.556343Z",
       "stabilities": [
-        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "5.40.0",
+      "version": "5.42.3",
       "outputs_to_install": [
         "man",
+        "out",
+        "out",
         "out"
       ],
       "outputs": {
-        "devdoc": "/nix/store/i81szsmvsh4wyq7v56l81n52zc02k70p-perl-5.40.0-devdoc",
-        "man": "/nix/store/85splaxaqb8ra00ng4nqp3pwcv996f4q-perl-5.40.0-man",
-        "out": "/nix/store/qdsazmlxrchc01wx0kgkkz7axd435wh4-perl-5.40.0"
+        "devdoc": "/nix/store/lxz734ifl1jj4rydgh3izcaj31ji793k-perl-5.42.3-devdoc",
+        "man": "/nix/store/gw7zagh9cvx25b601jd1sv021xjp797p-perl-5.42.3-man",
+        "out": "/nix/store/w03i01kiakf4wz7jbp1l59c0bhb3pjca-perl-5.42.3"
       },
-      "system": "x86_64-darwin",
+      "system": "x86_64-linux",
       "group": "toplevel",
       "priority": 5
     },
     {
-      "attr_path": "perl",
+      "attr_path": "colima",
       "broken": false,
-      "derivation": "/nix/store/lhw9cl3zbzmb2zj7fpi8dhxf930h9253-perl-5.40.0.drv",
-      "description": "Standard implementation of the Perl 5 programming language",
-      "install_id": "perl",
-      "license": "Artistic-1.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "name": "perl-5.40.0",
-      "pname": "perl",
-      "rev": "8d4ddb19d03c65a36ad8d189d001dc32ffb0306b",
-      "rev_count": 862643,
-      "rev_date": "2025-09-16T15:19:26Z",
-      "scrape_date": "2025-09-19T02:34:18.559820Z",
+      "derivation": "/nix/store/066g7xzlspz6fs7lsqrg18r4hcaahanm-colima-0.8.4.drv",
+      "description": "Container runtimes with minimal setup",
+      "install_id": "colima",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c9b6fb798541223bbb396d287d16f43520250518",
+      "name": "colima-0.8.4",
+      "pname": "colima",
+      "rev": "c9b6fb798541223bbb396d287d16f43520250518",
+      "rev_count": 873798,
+      "rev_date": "2025-10-07T10:12:45Z",
+      "scrape_date": "2025-10-09T04:32:19.119208Z",
       "stabilities": [
         "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "5.40.0",
+      "version": "0.8.4",
       "outputs_to_install": [
-        "man",
         "out"
       ],
       "outputs": {
-        "devdoc": "/nix/store/dnd8d9zxah4ik6s9gb5val42rpddklph-perl-5.40.0-devdoc",
-        "man": "/nix/store/d85zjbvi2ngx8gqddpia81gmz9bk92zv-perl-5.40.0-man",
-        "out": "/nix/store/m3cc78gacmsq370nkbcszpmqs04k8zps-perl-5.40.0"
+        "out": "/nix/store/wrk5kl4mr8ag4v0j2i5f1imv7k4xd4sy-colima-0.8.4"
+      },
+      "system": "aarch64-darwin",
+      "group": "vm",
+      "priority": 5
+    },
+    {
+      "attr_path": "colima",
+      "broken": false,
+      "derivation": "/nix/store/0fd82cr051x728y2183jnciy79z5jcfv-colima-0.8.4.drv",
+      "description": "Container runtimes with minimal setup",
+      "install_id": "colima",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c9b6fb798541223bbb396d287d16f43520250518",
+      "name": "colima-0.8.4",
+      "pname": "colima",
+      "rev": "c9b6fb798541223bbb396d287d16f43520250518",
+      "rev_count": 873798,
+      "rev_date": "2025-10-07T10:12:45Z",
+      "scrape_date": "2025-10-09T04:42:20.859517Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.8.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/bhbbs82dlrp4c32sb52vhqa5160j6b9y-colima-0.8.4"
+      },
+      "system": "aarch64-linux",
+      "group": "vm",
+      "priority": 5
+    },
+    {
+      "attr_path": "colima",
+      "broken": false,
+      "derivation": "/nix/store/abplbm7iddm2s0gjph395h1ckizcwrag-colima-0.8.4.drv",
+      "description": "Container runtimes with minimal setup",
+      "install_id": "colima",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c9b6fb798541223bbb396d287d16f43520250518",
+      "name": "colima-0.8.4",
+      "pname": "colima",
+      "rev": "c9b6fb798541223bbb396d287d16f43520250518",
+      "rev_count": 873798,
+      "rev_date": "2025-10-07T10:12:45Z",
+      "scrape_date": "2025-10-09T05:01:55.866575Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.8.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/j5qd07bv1wsyxx11lfzarp90izap8fnj-colima-0.8.4"
       },
       "system": "x86_64-linux",
-      "group": "toplevel",
+      "group": "vm",
       "priority": 5
     }
   ]
