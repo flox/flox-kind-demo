@@ -2,6 +2,27 @@
 
 This repository contains the configuration files needed to create a [Kind](https://kind.sigs.k8s.io/) (Kubernetes in Docker) cluster with Flox runtime support. This cluster can be used to quickly try out the Flox shim locally.
 
+## Prerequisites
+
+Before starting the demo you need:
+
+- [Flox installed](https://flox.dev/docs/install-flox/) on your machine.
+- A FloxHub login: `flox auth login`.
+
+The workloads run from Flox environments (`flox/redis`,
+`flox/quotes-app`) that the shim pulls from FloxHub at container start.
+`just up` copies your host FloxHub token into a Kubernetes secret
+(`floxhub-token`) that each pod mounts at `/var/run/secrets/flox.dev`, so
+the in-cluster shim can authenticate the pull. If you are not logged in,
+`just up` stops with an error.
+
+> **Security note:** `flox auth token` prints your personal FloxHub
+> session token, which carries your full FloxHub access. `just up` stores
+> it only in a secret inside the local Kind cluster, and `just down`
+> deletes that cluster (and the secret with it). Do not run this demo
+> against a shared or remote cluster, and do not paste the token anywhere
+> persistent.
+
 ## Setup Instructions
 
 ### Start the Demo Environment
@@ -19,6 +40,7 @@ This will:
 - Start a Colima VM
 - Create a Kind cluster named `flox-shim` with the provided configuration
 - Apply the Flox RuntimeClass configuration
+- Create the `floxhub-token` secret from your FloxHub login
 - Deploy the sample application
 - Forward port 3000 to the deployed application
 - Display helpful next steps

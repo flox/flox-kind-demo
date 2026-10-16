@@ -22,6 +22,16 @@ spec:
           image: flox/empty:1.0.0
           # The command to run inside your environment
           command: ["quotes-app-go", "-r", "redis:6379"]
+          volumeMounts:
+            # The Flox shim reads the FloxHub token from this mount to pull
+            # the `flox/quotes-app` environment named in the annotation above.
+            - name: floxhub-token
+              mountPath: /var/run/secrets/flox.dev
+              readOnly: true
+      volumes:
+        - name: floxhub-token
+          secret:
+            secretName: floxhub-token
 ---
 apiVersion: v1
 kind: Service
