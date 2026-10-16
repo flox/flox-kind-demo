@@ -18,8 +18,11 @@ the in-cluster shim can authenticate the pull. If you are not logged in,
 
 > **Security note:** `flox auth token` prints your personal FloxHub
 > session token, which carries your full FloxHub access. `just up` stores
-> it only in a secret inside the local Kind cluster, and `just down`
-> deletes that cluster (and the secret with it). Do not run this demo
+> it in a secret inside the local Kind cluster. The shim mounts that
+> secret into each pod and injects it as `FLOX_FLOXHUB_TOKEN` in the app
+> process, so anything running in the `redis`/`quotes` containers — or
+> anyone who can `kubectl exec` into them — can read it. `just down`
+> deletes the cluster and the secret with it. Do not run this demo
 > against a shared or remote cluster, and do not paste the token anywhere
 > persistent.
 
