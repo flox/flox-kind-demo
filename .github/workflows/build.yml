@@ -55,6 +55,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           platforms: "linux/arm64,linux/amd64"
+          secrets: |
+            floxhub_token=${{ secrets.FLOXHUB_TOKEN }}
 
 
 
