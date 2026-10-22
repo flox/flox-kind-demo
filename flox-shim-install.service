@@ -1,0 +1,17 @@
+[Unit]
+Description=Register the Flox containerd runtime shim
+# The installer edits containerd's config and restarts it, so run after
+# containerd is up and before kubelet starts scheduling pods.
+After=containerd.service
+Wants=containerd.service
+Before=kubelet.service
+ConditionPathExists=!/run/flox-shim-installed
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/containerd-shim-flox-installer
+ExecStartPost=/usr/bin/touch /run/flox-shim-installed
+
+[Install]
+WantedBy=multi-user.target
