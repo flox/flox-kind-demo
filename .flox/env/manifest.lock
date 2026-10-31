@@ -11,6 +11,10 @@
       "docker-client": {
         "pkg-path": "docker-client"
       },
+      "flox-agent": {
+        "pkg-path": "flox/flox-agent",
+        "pkg-group": "flox-agent"
+      },
       "gh": {
         "pkg-path": "gh"
       },
@@ -941,6 +945,96 @@
       },
       "system": "x86_64-linux",
       "group": "vm",
+      "priority": 5
+    },
+    {
+      "attr_path": "flox-agent",
+      "broken": false,
+      "derivation": "/nix/store/y7b9l1wq25z99kcfr1m36zi2z5zv38hp-flox-agent-0.9.0-332-gb44bbc8.drv",
+      "description": "Flox-native config management for AI coding agents",
+      "install_id": "flox-agent",
+      "license": "MIT",
+      "locked_url": "https://github.com/agent-stacks/agent-stacks-cli?rev=b44bbc82c99a9754655ff9163267ba2294b81f0d",
+      "name": "flox-agent-0.9.0-332-gb44bbc8",
+      "pname": "flox-agent",
+      "rev": "b44bbc82c99a9754655ff9163267ba2294b81f0d",
+      "rev_count": 534,
+      "rev_date": "2026-10-30T21:48:07Z",
+      "scrape_date": "2026-10-31T00:32:43.442625Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.9.0-332-gb44bbc8",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/dzj04rw1cq366bjb7yaigs20hfqp29g8-flox-agent-0.9.0-332-gb44bbc8"
+      },
+      "system": "aarch64-darwin",
+      "group": "flox-agent",
+      "priority": 5
+    },
+    {
+      "attr_path": "flox-agent",
+      "broken": false,
+      "derivation": "/nix/store/w471dvyjyivc0hxaj7ylw930kzk5g6mj-flox-agent-0.9.0-332-gb44bbc8.drv",
+      "description": "Flox-native config management for AI coding agents",
+      "install_id": "flox-agent",
+      "license": "MIT",
+      "locked_url": "https://github.com/agent-stacks/agent-stacks-cli?rev=b44bbc82c99a9754655ff9163267ba2294b81f0d",
+      "name": "flox-agent-0.9.0-332-gb44bbc8",
+      "pname": "flox-agent",
+      "rev": "b44bbc82c99a9754655ff9163267ba2294b81f0d",
+      "rev_count": 534,
+      "rev_date": "2026-10-30T21:48:07Z",
+      "scrape_date": "2026-10-31T00:32:43.442631Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.9.0-332-gb44bbc8",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/fjvd5v4ysq0kfff535qiyqgcnl7wrnr5-flox-agent-0.9.0-332-gb44bbc8"
+      },
+      "system": "aarch64-linux",
+      "group": "flox-agent",
+      "priority": 5
+    },
+    {
+      "attr_path": "flox-agent",
+      "broken": false,
+      "derivation": "/nix/store/igd21665594hmjcd6in5bdjac8yscpgx-flox-agent-0.9.0-332-gb44bbc8.drv",
+      "description": "Flox-native config management for AI coding agents",
+      "install_id": "flox-agent",
+      "license": "MIT",
+      "locked_url": "https://github.com/agent-stacks/agent-stacks-cli?rev=b44bbc82c99a9754655ff9163267ba2294b81f0d",
+      "name": "flox-agent-0.9.0-332-gb44bbc8",
+      "pname": "flox-agent",
+      "rev": "b44bbc82c99a9754655ff9163267ba2294b81f0d",
+      "rev_count": 534,
+      "rev_date": "2026-10-30T21:48:07Z",
+      "scrape_date": "2026-10-31T00:32:43.442632Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.9.0-332-gb44bbc8",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/ykcgcwam398h9jyhkz7b90564hyky5xr-flox-agent-0.9.0-332-gb44bbc8"
+      },
+      "system": "x86_64-linux",
+      "group": "flox-agent",
       "priority": 5
     }
   ]
