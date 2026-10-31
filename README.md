@@ -119,7 +119,14 @@ flox-agent launch --sandbox k8s --sandbox-options \
 
 The project folder (without `.git`) is copied into the pod, Claude runs
 there with your terminal attached, and when it exits `/workspace` is
-copied back over the folder and the sandbox is deleted.
+copied back over the folder and the sandbox is deleted. The copy back
+replaces the folder's contents: files Claude deleted are deleted, and
+edits you made locally during the session are lost. If the copy back
+fails, the folder is left as it was (or the copy is saved and its path
+printed) and the sandbox is kept, with the commands to recover it.
+
+The `ttl` (4h by default) ends a session still in use too; set a longer
+one for long sessions.
 
 | Option | Default | Does |
 | ------ | ------- | ---- |
