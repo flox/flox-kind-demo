@@ -16,6 +16,13 @@ up:
     just image
     kind create cluster --config=Cluster.yaml --name flox-shim
     kubectl apply -f RuntimeClass.yaml
+    # Pods cannot reach Docker's DNS through the kind node (it answers the
+    # node, not pod traffic), so names outside the cluster, such as
+    # api.anthropic.com for the agent sandboxes, would not resolve.
+    # CoreDNS asks public resolvers instead.
+    kubectl -n kube-system get configmap coredns -o yaml | sed 's|forward \. /etc/resolv.conf|forward . 1.1.1.1 8.8.8.8|' | kubectl apply -f -
+    kubectl -n kube-system rollout restart deployment/coredns
+    kubectl -n kube-system rollout status deployment/coredns --timeout=2m
     # Copy the host login into a secret that the pods mount at
     # /var/run/secrets/flox.dev so the shim can pull the environments.
     flox auth token | kubectl create secret generic floxhub-token --from-file=floxhub-token=/dev/stdin --dry-run=client -o yaml | kubectl apply -f -
