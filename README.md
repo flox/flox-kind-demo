@@ -96,12 +96,17 @@ v1.0.8 and creates the `agent-sandbox` namespace. With the
 with the public FloxHub environment `garbas/claude-sandbox`
 (`envs/claude-sandbox`) as everything inside it.
 
-The node image is built locally (`just image`) with the shim from
-[containerd-shim-flox#85](https://github.com/flox/containerd-shim-flox/pull/85),
-which non-root pods need until it is released.
+Non-root pods need containerd-shim-flox 1.2.0 or later, which the node
+image `ghcr.io/flox/flox-kind:latest` ships.
 
-`agent-sandbox-k8s` is not in the catalog yet. Until it is, build it from
-agent-pkgs and put it on your `PATH`:
+Install `agent-sandbox-k8s` from the catalog:
+
+```bash
+flox install agent-stacks/agent-sandbox-k8s
+```
+
+The catalog builds it for Linux only. On macOS, build it from agent-pkgs
+and put it on your `PATH`:
 
 ```bash
 nix build github:agent-stacks/agent-pkgs#agent-sandbox-k8s

@@ -2,6 +2,6 @@ kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
 - role: control-plane
-  image: flox-kind:pr85
+  image: ghcr.io/flox/flox-kind:latest
 - role: worker
-  image: flox-kind:pr85
+  image: ghcr.io/flox/flox-kind:latest

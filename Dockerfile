@@ -40,30 +40,6 @@ RUN flox activate -r flox/containerd-shim-flox-installer --trust -- bash -euc '\
     && flox delete -f -d /root/.cache/flox/remote/flox/containerd-shim-flox-installer \
     && flox gc \
     && rm -rf /root/.cache /root/.local
-
-# The shim from containerd-shim-flox#85, which lets pods run as a non-root
-# user (the agent sandboxes run as uid 1000), until it is released. Built
-# the way the released shim is, so its bash, less and procps paths are set,
-# and kept by a GC root. flox-shim-install.service links it over the
-# released one after the installer runs. The repository is private, so
-# `just image` clones it into .build/ with your GitHub login.
-COPY .build/containerd-shim-flox /tmp/shim
-RUN apt update && apt install -y --no-install-recommends git \
-    && rm -rf /var/lib/apt/lists/* \
-    && cd /tmp/shim \
-    # Builds here run without Nix's sandbox, where a step that writes to
-    # $HOME leaves /homeless-shelter behind and Nix refuses the next one.
-    # Each finished step stays built, so clearing it and retrying goes on.
-    && for try in 1 2 3 4 5; do \
-         flox build containerd-shim-flox-2x && break; \
-         [ -e /homeless-shelter ] && [ "$try" -lt 5 ] || exit 1; \
-         rm -rf /homeless-shelter; \
-       done \
-    && shim_real="$(readlink -f /tmp/shim/result-containerd-shim-flox-2x)" \
-    && nix-store --add-root /nix/var/nix/gcroots/containerd-shim-flox-pr85 --indirect -r "$shim_real" \
-    && mkdir -p /opt/flox-shim-pr85 \
-    && ln -fs "$shim_real/bin/containerd-shim-flox-v2" /opt/flox-shim-pr85/containerd-shim-flox-v2 \
-    && cd / && rm -rf /tmp/shim /root/.cache /root/.local
 COPY flox-shim-install.service /etc/systemd/system/flox-shim-install.service
 # Enable by symlink because `systemctl enable` is unavailable during docker build.
 RUN ln -s /etc/systemd/system/flox-shim-install.service \

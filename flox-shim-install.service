@@ -11,9 +11,6 @@ ConditionPathExists=!/run/flox-shim-installed
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/local/bin/containerd-shim-flox-installer
-# The non-root shim (containerd-shim-flox#85) in place of the released one;
-# see the Dockerfile.
-ExecStartPost=/bin/ln -fs /opt/flox-shim-pr85/containerd-shim-flox-v2 /usr/local/bin/containerd-shim-flox-v2
 ExecStartPost=/usr/bin/touch /run/flox-shim-installed
 
 [Install]
