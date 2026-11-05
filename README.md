@@ -105,14 +105,6 @@ Install `agent-sandbox-k8s` from the catalog:
 flox install agent-stacks/agent-sandbox-k8s
 ```
 
-The catalog builds it for Linux only. On macOS, build it from agent-pkgs
-and put it on your `PATH`:
-
-```bash
-nix build github:agent-stacks/agent-pkgs#agent-sandbox-k8s
-export PATH=$PWD/result/bin:$PATH
-```
-
 To forward your Claude login, set `CLAUDE_CODE_OAUTH_TOKEN` (make one with
 `claude setup-token`) or `ANTHROPIC_API_KEY`. Then, from a project folder:
 
