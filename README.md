@@ -87,6 +87,71 @@ kubectl get pods
 kubectl logs deployment/quotes
 ```
 
+## Launch Claude in an agent sandbox
+
+`just up` also installs [agent-sandbox](https://agent-sandbox.sigs.k8s.io/)
+v1.0.8 and creates the `agent-sandbox` namespace. With the
+`agent-sandbox-k8s` package, `flox-agent` runs Claude in a fresh
+`Sandbox` there: a pod on the `flox` runtime class, running as uid 1000,
+with the public FloxHub environment `garbas/claude-sandbox`
+(`envs/claude-sandbox`) as everything inside it.
+
+Non-root pods need containerd-shim-flox 1.2.0 or later, which the node
+image `ghcr.io/flox/flox-kind:latest` ships.
+
+Install `agent-sandbox-k8s` from the catalog:
+
+```bash
+flox install agent-stacks/agent-sandbox-k8s
+```
+
+To forward your Claude login, set `CLAUDE_CODE_OAUTH_TOKEN` (make one with
+`claude setup-token`) or `ANTHROPIC_API_KEY`. Then, from a project folder:
+
+```bash
+flox-agent launch --sandbox k8s --sandbox-options \
+  '{"environment": "garbas/claude-sandbox", "forwardLogin": true,
+    "copyWorkspaceBack": true}' claude
+```
+
+The project folder (without `.git`) is copied into the pod, Claude runs
+there with your terminal attached, and when it exits `/workspace` is
+copied back over the folder and the sandbox is deleted. The copy back
+replaces the folder's contents: files Claude deleted are deleted, and
+edits you made locally during the session are lost. If the copy back
+fails, the folder is left as it was (or the copy is saved and its path
+printed) and the sandbox is kept, with the commands to recover it.
+
+The `ttl` (4h by default) ends a session still in use too; set a longer
+one for long sessions.
+
+| Option | Default | Does |
+| ------ | ------- | ---- |
+| `environment` | launch env | FloxHub env, `owner/name[:generation]` |
+| `context` | current | kube context |
+| `namespace` | `agent-sandbox` | namespace |
+| `copyWorkspace` | `true` | copy the project into `/workspace` |
+| `copyWorkspaceBack` | `false` | copy `/workspace` back at exit |
+| `forwardLogin` | `false` | pass the Claude login into the pod |
+| `forwardFloxhubToken` | `false` | pass your `flox auth token` |
+| `ttl` | `4h` | when the cluster deletes a left-behind sandbox |
+
+Without `environment`, the environment you launch from is used, pinned to
+its current generation; it must be pushed to FloxHub with no local
+changes. A private environment needs `forwardFloxhubToken`, and the
+token is then readable by the agent: the shim gives it to every process
+in the pod.
+
+Sandboxes left behind, say after closing the laptop, are deleted at their
+`ttl`. To see or delete them now:
+
+```bash
+kubectl -n agent-sandbox get sandbox -l app.kubernetes.io/managed-by=agent-sandbox-k8s
+kubectl -n agent-sandbox delete sandbox -l app.kubernetes.io/managed-by=agent-sandbox-k8s
+```
+
+To change the sandbox environment, edit `envs/claude-sandbox` and run
+`just push-sandbox-env`.
 
 ## Cleanup
 

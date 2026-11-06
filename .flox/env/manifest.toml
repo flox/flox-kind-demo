@@ -18,6 +18,8 @@ colima.pkg-group = "vm"
 docker-client.pkg-path = "docker-client"
 perl.pkg-path = "perl"
 perl.outputs = "all"
+flox-agent.pkg-path = "flox/flox-agent"
+flox-agent.pkg-group = "flox-agent"
 
 [services.port-forward]
 command = "kubectl port-forward services/quotes 3000:3000"
